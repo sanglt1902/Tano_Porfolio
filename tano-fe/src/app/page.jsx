@@ -11,7 +11,6 @@ export default async function Home() {
   // const a = JSON.stringify(await loadData());
   return (
     <>
-      <div>{process.env.NEXT_PUBLIC_DB_HOST}</div>
       <div className="boxed_wrapper">
         <Loader />
         <SearchPopup />

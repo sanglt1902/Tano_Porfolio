@@ -783,8 +783,12 @@
    When document is loaded, do
    ========================================================================== */
 	
-	$(window).on('load', function() {
-		handlePreloader();
+	// $(window).on('load', function() {
+	// 	handlePreloader();
+	// });
+
+	$(document).ready(function() {
+    handlePreloader();
 	});
 
 	

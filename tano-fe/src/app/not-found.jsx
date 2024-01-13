@@ -27,7 +27,7 @@ function NotFound() {
                 Thi page you are looking for was moved, removed, renamed or
                 never existed
               </h4>
-              <div className="form-inner">
+              {/* <div className="form-inner">
                 <form action="error.html" method="post">
                   <div className="form-group">
                     <input
@@ -41,7 +41,7 @@ function NotFound() {
                     </button>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

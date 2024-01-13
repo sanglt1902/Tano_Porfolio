@@ -1169,14 +1169,14 @@ img {
   content: "";
   width: calc(100% + 9px);
   height: 1px;
-  left: -13px;
+  left: -5px;
   bottom: 26px;
   transform: scale(0, 0);
   transition: all 500ms ease;
 }
 
 .main-menu .navigation > li.fix-underline-position > a:after {
-  left: -5px;
+  left: -13px;
 }
 
 .main-menu .navigation > li.current > a:after,

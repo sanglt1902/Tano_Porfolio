@@ -46,29 +46,17 @@ function MainHeader() {
                   id="navbarSupportedContent"
                 >
                   <ul className="navigation clearfix">
-                    <li
-                      className={
-                        pathname === "/"
-                          ? "fix-underline-position current"
-                          : "fix-underline-position"
-                      }
-                    >
+                    <li className={pathname === "/" ? "current" : ""}>
                       <a href="/">Home</a>
                     </li>
-                    <li
-                      className={
-                        pathname === "/about"
-                          ? "fix-underline-position current"
-                          : "fix-underline-position"
-                      }
-                    >
+                    <li className={pathname === "/about" ? "current" : ""}>
                       <a href="/about">About</a>
                     </li>
                     <li
                       className={
                         servicesPaths.includes(pathname)
-                          ? "dropdown current"
-                          : "dropdown"
+                          ? "dropdown current fix-underline-position"
+                          : "dropdown fix-underline-position"
                       }
                     >
                       <a href="#">Services</a>
@@ -90,24 +78,28 @@ function MainHeader() {
                         </li>
                       </ul>
                     </li>
-                    <li className="dropdown">
+                    <li
+                      className={
+                        pathname.includes("/projects") ? "current" : ""
+                      }
+                    >
                       <a href="/projects">Projects</a>
                     </li>
-                    <li className="dropdown">
-                      <a href="#">Pages</a>
-                      <ul>
+                    <li className={pathname.includes("/team") ? "current" : ""}>
+                      <a href="/team">Our Team</a>
+                      {/* <ul>
                         <li>
                           <a href="/team">Our Team</a>
                         </li>
                         <li>
                           <a href="/testimonial">Testimonial</a>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
-                    <li className="dropdown">
+                    {/* <li>
                       <a href="/blogs">Blog</a>
-                    </li>
-                    <li className="fix-underline-position">
+                    </li> */}
+                    <li className={pathname === "/contact" ? "current" : ""}>
                       <a href="/contact">Contact</a>
                     </li>
                   </ul>
