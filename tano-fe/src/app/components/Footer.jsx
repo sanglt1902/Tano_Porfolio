@@ -1,18 +1,43 @@
-import React from "react";
+import Image from "next/image";
+import { GET_FOOTER_IMAGES } from "@/graphql/query";
+import { getClient } from "../../../client";
 
-function Footer() {
+async function Footer() {
+  const images = await loadData();
+  const footerImages = images?.footerImage?.data?.attributes?.FooterImages;
+
+  const baseURL = process.env.NEXT_PUBLIC_DB_HOST;
+
   return (
     <>
       {/* main-footer */}
       <footer className="main-footer">
         <figure className="image-layer-1">
-          <img src="/assets/images/resource/footer-1.jpg" alt="" />
+          <Image
+            src={`${baseURL}${footerImages?.data[0]?.attributes?.url}`}
+            unoptimized
+            width={149}
+            height={149}
+            alt="Footer Image 1"
+          />
         </figure>
         <figure className="image-layer-2">
-          <img src="/assets/images/resource/footer-2.jpg" alt="" />
+          <Image
+            src={`${baseURL}${footerImages?.data[1]?.attributes?.url}`}
+            unoptimized
+            width={231}
+            height={231}
+            alt="Footer Image 2"
+          />
         </figure>
         <figure className="image-layer-3">
-          <img src="/assets/images/resource/footer-3.jpg" alt="" />
+          <Image
+            src={`${baseURL}${footerImages?.data[2]?.attributes?.url}`}
+            unoptimized
+            width={231}
+            height={231}
+            alt="Footer Image 3"
+          />
         </figure>
         <div
           className="bg-layer"
@@ -27,7 +52,7 @@ function Footer() {
               Do you need any help? <br />
               Send Message.
             </h2>
-            <a href="index.html">
+            <a href="/">
               <i className="icon-7" />
             </a>
           </div>
@@ -42,15 +67,18 @@ function Footer() {
                     <ul className="info-list clearfix">
                       <li>
                         <i className="icon-17" />
-                        <a href="tel:88123456987231">+88 12345 6987 231</a>
+                        <a href="tel:0394438632">0394438632</a>
                       </li>
                       <li>
                         <i className="icon-18" />
-                        <a href="mailto:info@envato.com">info@envato.com</a>
+                        <a href="mailto:tanodesign@gmail.com">
+                          tanodesign@gmail.com
+                        </a>
                       </li>
                       <li>
                         <i className="far fa-map-marker-alt" />
-                        380 St Kilda Road, Melbourne VIC 3004, Australia
+                        87 Lê Văn Huân, phường 13, quận Tân Bình, Thành phố Hồ
+                        Chí Minh, Việt Nam
                       </li>
                     </ul>
                   </div>
@@ -62,7 +90,7 @@ function Footer() {
                     <h3>Newsletter</h3>
                   </div>
                   <div className="widget-content">
-                    <form action="contact.html" method="post">
+                    {/* <form action="contact.html" method="post">
                       <div className="form-group">
                         <input
                           type="email"
@@ -72,23 +100,23 @@ function Footer() {
                         />
                         <button type="submit">Send</button>
                       </div>
-                    </form>
+                    </form> */}
                     <ul className="social-links clearfix">
                       <li>
                         <h4>Social Network :</h4>
                       </li>
                       <li>
-                        <a href="index.html">
+                        <a href="/">
                           <i className="icon-3" />
                         </a>
                       </li>
                       <li>
-                        <a href="index.html">
+                        <a href="/">
                           <i className="icon-4" />
                         </a>
                       </li>
                       <li>
-                        <a href="index.html">
+                        <a href="/">
                           <i className="icon-5" />
                         </a>
                       </li>
@@ -101,7 +129,7 @@ function Footer() {
           <div className="footer-bottom centred">
             <div className="copyright">
               <h4>
-                Copyright By © <a href="index.html">Inventarc</a> - 2022
+                Copyright By © <a href="/">Inventarc</a> - 2024
               </h4>
             </div>
           </div>
@@ -113,3 +141,14 @@ function Footer() {
 }
 
 export default Footer;
+
+const loadData = async () => {
+  const { data } = await getClient().query({
+    query: GET_FOOTER_IMAGES,
+    variables: {
+      id: "LIVE",
+    },
+  });
+
+  return data;
+};

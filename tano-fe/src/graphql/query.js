@@ -19,3 +19,21 @@ export const GET_SLIDE_BY_ID = gql`
     }
   }
 `;
+
+export const GET_FOOTER_IMAGES = gql`
+  query footerImage($publicationState: PublicationState) {
+    footerImage(publicationState: $publicationState) {
+      data {
+        attributes {
+          FooterImages {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

@@ -39,9 +39,9 @@ export default function RootLayout({ children }) {
       <Script src="/assets/js/jquery.circleType.js" />
       <Script src="/assets/js/isotope.js" />
       <Script src="/assets/js/countdown.js" />
-      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU" />
-      <Script src="/assets/js/gmaps.js" />
-      <Script src="/assets/js/map-helper.js" />
+      {/* <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU" /> */}
+      {/* <Script src="/assets/js/gmaps.js" /> */}
+      {/* <Script src="/assets/js/map-helper.js" /> */}
       <Script src="/assets/js/script.js" />
     </html>
   );
