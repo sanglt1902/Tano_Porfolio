@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { GET_FOOTER_IMAGES } from "@/graphql/query";
 import { getClient } from "../../../client";
+import { BASE_URL } from "../constants/url";
 
 async function Footer() {
   const images = await loadData();
   const footerImages = images?.footerImage?.data?.attributes?.FooterImages;
 
-  const baseURL = process.env.NEXT_PUBLIC_DB_HOST;
+  // const BASE_URL = process.env.NEXT_PUBLIC_DB_HOST;
 
   return (
     <>
@@ -14,7 +15,7 @@ async function Footer() {
       <footer className="main-footer">
         <figure className="image-layer-1">
           <Image
-            src={`${baseURL}${footerImages?.data[0]?.attributes?.url}`}
+            src={`${BASE_URL}${footerImages?.data[0]?.attributes?.url}`}
             unoptimized
             width={149}
             height={149}
@@ -23,7 +24,7 @@ async function Footer() {
         </figure>
         <figure className="image-layer-2">
           <Image
-            src={`${baseURL}${footerImages?.data[1]?.attributes?.url}`}
+            src={`${BASE_URL}${footerImages?.data[1]?.attributes?.url}`}
             unoptimized
             width={231}
             height={231}
@@ -32,7 +33,7 @@ async function Footer() {
         </figure>
         <figure className="image-layer-3">
           <Image
-            src={`${baseURL}${footerImages?.data[2]?.attributes?.url}`}
+            src={`${BASE_URL}${footerImages?.data[2]?.attributes?.url}`}
             unoptimized
             width={231}
             height={231}
@@ -146,7 +147,7 @@ const loadData = async () => {
   const { data } = await getClient().query({
     query: GET_FOOTER_IMAGES,
     variables: {
-      id: "LIVE",
+      publicationState: "LIVE",
     },
   });
 

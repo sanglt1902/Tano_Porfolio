@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * slide router
+ * our-team router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::slide.slide');
+module.exports = createCoreRouter('api::our-team.our-team');

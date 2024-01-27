@@ -1,4 +1,3 @@
-import { GET_SLIDE_BY_ID } from "@/graphql/query";
 import { getClient } from "../../client";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
@@ -8,7 +7,6 @@ import SearchPopup from "./components/SearchPopup";
 import SidebarCartItem from "./components/SidebarCartItem";
 
 export default async function Home() {
-  const a = JSON.stringify(await loadData());
   return (
     <>
       <div className="boxed_wrapper">
@@ -905,14 +903,3 @@ export default async function Home() {
     </>
   );
 }
-
-const loadData = async () => {
-  const { data } = await getClient().query({
-    query: GET_SLIDE_BY_ID,
-    variables: {
-      id: 1,
-    },
-  });
-
-  return data;
-};

@@ -6,7 +6,23 @@ import ScrollToTop from "../components/ScrollToTop";
 import SearchPopup from "../components/SearchPopup";
 import SidebarCartItem from "../components/SidebarCartItem";
 
-const About = () => {
+import {
+  GET_ABOUT_HERO_BANNER,
+  GET_ABOUT_GET_TO_KNOW,
+  GET_ABOUT_TESTIMONIALS,
+  GET_ABOUT_CLIENT_SECTION,
+  GET_OUR_TEAM,
+} from "@/graphql/query";
+import { getClient } from "../../../client";
+import { BASE_URL } from "../constants/url";
+
+export default async function About() {
+  const heroBanner = await loadHeroBanner();
+  const getToKnowInfo = await loadGetToKnowInfo();
+  const testimonials = await loadTestimonials();
+  const clientSection = await loadClientSection();
+  const ourTeamInfo = await loadOurTeam();
+
   return (
     <div className="boxed_wrapper">
       <Loader />
@@ -19,7 +35,7 @@ const About = () => {
           <div
             className="bg-layer"
             style={{
-              backgroundImage: "url(assets/images/background/page-title.jpg)",
+              backgroundImage: `url(${BASE_URL}${heroBanner?.aboutHeroBanner?.data?.attributes?.aboutHeroBanner?.data?.attributes?.url})`,
             }}
           />
           <div className="large-container">
@@ -48,7 +64,10 @@ const About = () => {
                   className="overlay-anim-white-bg image p_relative d_block"
                   data-animation="overlay-animation"
                 >
-                  <img src="assets/images/resource/about-2.jpg" alt="" />
+                  <img
+                    src={`${BASE_URL}${getToKnowInfo?.aboutGetToKnow?.data?.attributes?.getToKnowImage?.data?.attributes?.url}`}
+                    alt=""
+                  />
                 </figure>
                 <div className="curve-text">
                   <div
@@ -63,7 +82,11 @@ const About = () => {
                   <div className="text">
                     <div className="inner">
                       <h2>
-                        10<span>Years</span>
+                        {
+                          getToKnowInfo?.aboutGetToKnow?.data?.attributes
+                            ?.experiences
+                        }
+                        <span>Years</span>
                       </h2>
                       <h3>Experience</h3>
                     </div>
@@ -119,11 +142,11 @@ const About = () => {
                 data-wow-delay="00ms"
                 data-wow-duration="1500ms"
               >
-                <a href="service-details-2.html" className="inner-box">
+                <a href="/agency-minimal" className="inner-box">
                   <div className="icon-box">
                     <img src="assets/images/icons/icon-2.png" alt="" />
                   </div>
-                  <h4>Interior Design</h4>
+                  <h4>Agency Minimal</h4>
                 </a>
               </div>
             </div>
@@ -133,11 +156,11 @@ const About = () => {
                 data-wow-delay="200ms"
                 data-wow-duration="1500ms"
               >
-                <a href="service-details-2.html" className="inner-box">
+                <a href="/interior-design" className="inner-box">
                   <div className="icon-box">
                     <img src="assets/images/icons/icon-3.png" alt="" />
                   </div>
-                  <h4>Architecture</h4>
+                  <h4>Interior Design</h4>
                 </a>
               </div>
             </div>
@@ -147,7 +170,7 @@ const About = () => {
                 data-wow-delay="400ms"
                 data-wow-duration="1500ms"
               >
-                <a href="service-details-3.html" className="inner-box">
+                <a href="/urban-design" className="inner-box">
                   <div className="icon-box">
                     <img src="assets/images/icons/icon-4.png" alt="" />
                   </div>
@@ -161,11 +184,11 @@ const About = () => {
                 data-wow-delay="600ms"
                 data-wow-duration="1500ms"
               >
-                <a href="service-details-4.html" className="inner-box">
+                <a href="/decor-plan" className="inner-box">
                   <div className="icon-box">
                     <img src="assets/images/icons/icon-5.png" alt="" />
                   </div>
-                  <h4>Discr Design</h4>
+                  <h4>Decor Plan</h4>
                 </a>
               </div>
             </div>
@@ -178,74 +201,31 @@ const About = () => {
         <div
           className="bg-layer"
           style={{
-            backgroundImage: "url(assets/images/background/testimonial-bg.jpg)",
+            backgroundImage: `url(${BASE_URL}${testimonials?.aboutTestimonial?.data?.attributes?.aboutTestimonialBackground?.data?.attributes?.url})`,
           }}
         />
         <div className="large-container">
           <div className="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            <div className="testimonial-block-two">
-              <div className="inner-box">
-                <div className="quote">“</div>
-                <p>
-                  Integer sed id adipiscing viverra turpis sit gravida nec
-                  semper. Velit eu consequat turpis faucibus lacus, arcu nibh.
-                  At bibendum facilisis imperdiet sed rhoncus, pretium nulla.
-                  Tortor leo nisl gravida convallis. Adipiscing suscipit erat.
-                </p>
-                <div className="author-box">
-                  <figure className="author-thumb">
-                    <img
-                      src="assets/images/resource/testimonial-2.jpg"
-                      alt=""
-                    />
-                  </figure>
-                  <h4>Liam Noah</h4>
-                  <span className="designation">UX/ UI Designer</span>
+            {testimonials?.aboutTestimonial?.data?.attributes?.singleTesimonial.map(
+              (testimonial) => (
+                <div className="testimonial-block-two" key={testimonial.id}>
+                  <div className="inner-box">
+                    <div className="quote">“</div>
+                    <p>{testimonial.description}</p>
+                    <div className="author-box">
+                      <figure className="author-thumb">
+                        <img
+                          src={`${BASE_URL}${testimonial?.image?.data?.attributes?.url}`}
+                          alt=""
+                        />
+                      </figure>
+                      <h4>{testimonial.name}</h4>
+                      <span className="designation">{testimonial.role}</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="testimonial-block-two">
-              <div className="inner-box">
-                <div className="quote">“</div>
-                <p>
-                  Integer sed id adipiscing viverra turpis sit gravida nec
-                  semper. Velit eu consequat turpis faucibus lacus, arcu nibh.
-                  At bibendum facilisis imperdiet sed rhoncus, pretium nulla.
-                  Tortor leo nisl gravida convallis. Adipiscing suscipit erat.
-                </p>
-                <div className="author-box">
-                  <figure className="author-thumb">
-                    <img
-                      src="assets/images/resource/testimonial-3.jpg"
-                      alt=""
-                    />
-                  </figure>
-                  <h4>James Bond</h4>
-                  <span className="designation">UX/ UI Designer</span>
-                </div>
-              </div>
-            </div>
-            <div className="testimonial-block-two">
-              <div className="inner-box">
-                <div className="quote">“</div>
-                <p>
-                  Integer sed id adipiscing viverra turpis sit gravida nec
-                  semper. Velit eu consequat turpis faucibus lacus, arcu nibh.
-                  At bibendum facilisis imperdiet sed rhoncus, pretium nulla.
-                  Tortor leo nisl gravida convallis. Adipiscing suscipit erat.
-                </p>
-                <div className="author-box">
-                  <figure className="author-thumb">
-                    <img
-                      src="assets/images/resource/testimonial-4.jpg"
-                      alt=""
-                    />
-                  </figure>
-                  <h4>Haris Gulati</h4>
-                  <span className="designation">UX/ UI Designer</span>
-                </div>
-              </div>
-            </div>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -254,31 +234,13 @@ const About = () => {
       <section className="clients-section about-page">
         <div className="auto-container">
           <div className="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-            <figure className="clients-logo">
-              <a href="index.html">
-                <img src="assets/images/clients/clients-1.png" alt="" />
-              </a>
-            </figure>
-            <figure className="clients-logo">
-              <a href="index.html">
-                <img src="assets/images/clients/clients-2.png" alt="" />
-              </a>
-            </figure>
-            <figure className="clients-logo">
-              <a href="index.html">
-                <img src="assets/images/clients/clients-3.png" alt="" />
-              </a>
-            </figure>
-            <figure className="clients-logo">
-              <a href="index.html">
-                <img src="assets/images/clients/clients-4.png" alt="" />
-              </a>
-            </figure>
-            <figure className="clients-logo">
-              <a href="index.html">
-                <img src="assets/images/clients/clients-5.png" alt="" />
-              </a>
-            </figure>
+            {clientSection?.aboutClientSection?.data?.attributes?.aboutClientSection?.data.map(
+              (client) => (
+                <figure className="clients-logo" key={client?.id}>
+                  <img src={`${BASE_URL}${client?.attributes?.url}`} alt="" />
+                </figure>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -291,402 +253,41 @@ const About = () => {
             <h2>Our Team</h2>
           </div>
           <div className="three-item-carousel owl-carousel owl-theme owl-nav-none">
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-1.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
+            {ourTeamInfo?.ourTeam?.data?.attributes?.ourTeam?.map(
+              (person, index) => (
+                <div className="team-block-one" key={person?.id}>
+                  <div className="inner-box">
+                    <div className="image-box">
+                      <figure className="image">
+                        <img
+                          src={`${BASE_URL}${person?.image?.data?.attributes?.url}`}
+                          alt=""
+                        />
+                      </figure>
+                      <ul className="social-links clearfix">
+                        <li>
+                          <a href={`${person?.facebook}`}>
+                            <i className="icon-3" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href={`${person?.instagram}`}>
+                            <i className="icon-4" />
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="content-box">
+                      <span className="count-text">0{index + 1}</span>
+                      <h4>
+                        <a href="team-details.html">{person?.name}</a>
+                      </h4>
+                      <span className="designation">{person?.role}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="content-box">
-                  <span className="count-text">01</span>
-                  <h4>
-                    <a href="team-details.html">Gaurav Bhalla</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-2.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">02</span>
-                  <h4>
-                    <a href="team-details.html">Haris Gulati</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-3.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">03</span>
-                  <h4>
-                    <a href="team-details.html">Michel Watson</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-1.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">01</span>
-                  <h4>
-                    <a href="team-details.html">Gaurav Bhalla</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-2.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">02</span>
-                  <h4>
-                    <a href="team-details.html">Haris Gulati</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-3.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">03</span>
-                  <h4>
-                    <a href="team-details.html">Michel Watson</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-1.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">01</span>
-                  <h4>
-                    <a href="team-details.html">Gaurav Bhalla</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-2.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">02</span>
-                  <h4>
-                    <a href="team-details.html">Haris Gulati</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-3.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">03</span>
-                  <h4>
-                    <a href="team-details.html">Michel Watson</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-1.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">01</span>
-                  <h4>
-                    <a href="team-details.html">Gaurav Bhalla</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-2.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">02</span>
-                  <h4>
-                    <a href="team-details.html">Haris Gulati</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
-            <div className="team-block-one">
-              <div className="inner-box">
-                <div className="image-box">
-                  <figure className="image">
-                    <img src="assets/images/team/team-3.jpg" alt="" />
-                  </figure>
-                  <ul className="social-links clearfix">
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-3" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="index.html">
-                        <i className="icon-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="content-box">
-                  <span className="count-text">03</span>
-                  <h4>
-                    <a href="team-details.html">Michel Watson</a>
-                  </h4>
-                  <span className="designation">Architecture</span>
-                </div>
-              </div>
-            </div>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -695,6 +296,59 @@ const About = () => {
       <ScrollToTop />
     </div>
   );
+}
+
+const loadHeroBanner = async () => {
+  const { data } = await getClient().query({
+    query: GET_ABOUT_HERO_BANNER,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
 };
 
-export default About;
+const loadGetToKnowInfo = async () => {
+  const { data } = await getClient().query({
+    query: GET_ABOUT_GET_TO_KNOW,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};
+
+const loadTestimonials = async () => {
+  const { data } = await getClient().query({
+    query: GET_ABOUT_TESTIMONIALS,
+    variables: {
+      id: 1,
+    },
+  });
+
+  return data;
+};
+
+const loadClientSection = async () => {
+  const { data } = await getClient().query({
+    query: GET_ABOUT_CLIENT_SECTION,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};
+
+const loadOurTeam = async () => {
+  const { data } = await getClient().query({
+    query: GET_OUR_TEAM,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};

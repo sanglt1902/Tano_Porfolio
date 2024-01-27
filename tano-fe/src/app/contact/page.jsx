@@ -4,7 +4,13 @@ import ScrollToTop from "../components/ScrollToTop";
 import SearchPopup from "../components/SearchPopup";
 import SidebarCartItem from "../components/SidebarCartItem";
 
-function Contact() {
+import { GET_CONTACT_HERO_BANNER } from "@/graphql/query";
+import { getClient } from "../../../client";
+import { BASE_URL } from "../constants/url";
+
+export default async function Contact() {
+  const heroBanner = await loadHeroBanner();
+
   return (
     <>
       <div className="boxed_wrapper">
@@ -18,8 +24,7 @@ function Contact() {
             <div
               className="bg-layer"
               style={{
-                backgroundImage:
-                  "url(assets/images/background/page-title-10.jpg)",
+                backgroundImage: `url(${BASE_URL}${heroBanner?.contactHeroBanner?.data?.attributes?.contactHeroBanner?.data?.attributes?.url})`,
               }}
             />
             <div className="large-container">
@@ -103,7 +108,7 @@ function Contact() {
                   </form>
                 </div>
               </div> */}
-              <div className="col-lg-6 col-md-12 col-sm-12 content-column">
+              <div className="col-lg-6 col-md-12 col-sm-12 mb-4 content-column">
                 <div className="content-box">
                   <figure className="logo">
                     <a href="#">
@@ -179,4 +184,13 @@ function Contact() {
   );
 }
 
-export default Contact;
+const loadHeroBanner = async () => {
+  const { data } = await getClient().query({
+    query: GET_CONTACT_HERO_BANNER,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};

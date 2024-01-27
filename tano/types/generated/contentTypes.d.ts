@@ -362,67 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiFooterImageFooterImage extends Schema.SingleType {
-  collectionName: 'footer_images';
-  info: {
-    singularName: 'footer-image';
-    pluralName: 'footer-images';
-    displayName: 'Footer Image';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    FooterImages: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::footer-image.footer-image',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::footer-image.footer-image',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSlideSlide extends Schema.CollectionType {
-  collectionName: 'slides';
-  info: {
-    singularName: 'slide';
-    pluralName: 'slides';
-    displayName: 'Slide';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    images: Attribute.Media & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::slide.slide',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::slide.slide',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -829,6 +768,227 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutClientSectionAboutClientSection
+  extends Schema.SingleType {
+  collectionName: 'about_client_sections';
+  info: {
+    singularName: 'about-client-section';
+    pluralName: 'about-client-sections';
+    displayName: 'aboutClientSection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutClientSection: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-client-section.about-client-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-client-section.about-client-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAboutGetToKnowAboutGetToKnow extends Schema.SingleType {
+  collectionName: 'about_get_to_knows';
+  info: {
+    singularName: 'about-get-to-know';
+    pluralName: 'about-get-to-knows';
+    displayName: 'aboutGetToKnow';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    getToKnowImage: Attribute.Media;
+    experiences: Attribute.Integer & Attribute.DefaultTo<10>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-get-to-know.about-get-to-know',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-get-to-know.about-get-to-know',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAboutHeroBannerAboutHeroBanner extends Schema.SingleType {
+  collectionName: 'about_hero_banners';
+  info: {
+    singularName: 'about-hero-banner';
+    pluralName: 'about-hero-banners';
+    displayName: 'aboutHeroBanner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutHeroBanner: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-hero-banner.about-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-hero-banner.about-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAboutTestimonialAboutTestimonial
+  extends Schema.CollectionType {
+  collectionName: 'about_testimonials';
+  info: {
+    singularName: 'about-testimonial';
+    pluralName: 'about-testimonials';
+    displayName: 'aboutTestimonial';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutTestimonialBackground: Attribute.Media;
+    singleTesimonial: Attribute.Component<
+      'single-tesimonial.single-tesimonial',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-testimonial.about-testimonial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-testimonial.about-testimonial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactHeroBannerContactHeroBanner
+  extends Schema.SingleType {
+  collectionName: 'contact_hero_banners';
+  info: {
+    singularName: 'contact-hero-banner';
+    pluralName: 'contact-hero-banners';
+    displayName: 'contactHeroBanner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactHeroBanner: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-hero-banner.contact-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-hero-banner.contact-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterImageFooterImage extends Schema.SingleType {
+  collectionName: 'footer_images';
+  info: {
+    singularName: 'footer-image';
+    pluralName: 'footer-images';
+    displayName: 'Footer Image';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FooterImages: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-image.footer-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-image.footer-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOurTeamOurTeam extends Schema.SingleType {
+  collectionName: 'our_teams';
+  info: {
+    singularName: 'our-team';
+    pluralName: 'our-teams';
+    displayName: 'ourTeam';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ourTeam: Attribute.Component<'our-team.our-team', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-team.our-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-team.our-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -839,8 +999,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::footer-image.footer-image': ApiFooterImageFooterImage;
-      'api::slide.slide': ApiSlideSlide;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -849,6 +1007,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-client-section.about-client-section': ApiAboutClientSectionAboutClientSection;
+      'api::about-get-to-know.about-get-to-know': ApiAboutGetToKnowAboutGetToKnow;
+      'api::about-hero-banner.about-hero-banner': ApiAboutHeroBannerAboutHeroBanner;
+      'api::about-testimonial.about-testimonial': ApiAboutTestimonialAboutTestimonial;
+      'api::contact-hero-banner.contact-hero-banner': ApiContactHeroBannerContactHeroBanner;
+      'api::footer-image.footer-image': ApiFooterImageFooterImage;
+      'api::our-team.our-team': ApiOurTeamOurTeam;
     }
   }
 }

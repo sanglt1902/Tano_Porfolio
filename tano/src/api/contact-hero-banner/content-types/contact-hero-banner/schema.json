@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_hero_banners",
+  "info": {
+    "singularName": "contact-hero-banner",
+    "pluralName": "contact-hero-banners",
+    "displayName": "contactHeroBanner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contactHeroBanner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

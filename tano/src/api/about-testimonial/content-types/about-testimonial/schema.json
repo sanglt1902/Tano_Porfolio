@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_testimonials",
+  "info": {
+    "singularName": "about-testimonial",
+    "pluralName": "about-testimonials",
+    "displayName": "aboutTestimonial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutTestimonialBackground": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "singleTesimonial": {
+      "displayName": "singleTesimonial",
+      "type": "component",
+      "repeatable": true,
+      "component": "single-tesimonial.single-tesimonial"
+    }
+  }
+}

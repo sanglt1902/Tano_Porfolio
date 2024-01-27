@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_client_sections",
+  "info": {
+    "singularName": "about-client-section",
+    "pluralName": "about-client-sections",
+    "displayName": "aboutClientSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutClientSection": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

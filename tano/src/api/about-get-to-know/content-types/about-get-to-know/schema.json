@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_get_to_knows",
+  "info": {
+    "singularName": "about-get-to-know",
+    "pluralName": "about-get-to-knows",
+    "displayName": "aboutGetToKnow"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "getToKnowImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "experiences": {
+      "type": "integer",
+      "default": 10
+    }
+  }
+}

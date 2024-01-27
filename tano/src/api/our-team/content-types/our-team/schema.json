@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_teams",
+  "info": {
+    "singularName": "our-team",
+    "pluralName": "our-teams",
+    "displayName": "ourTeam"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ourTeam": {
+      "displayName": "ourTeam",
+      "type": "component",
+      "repeatable": true,
+      "component": "our-team.our-team"
+    }
+  }
+}
