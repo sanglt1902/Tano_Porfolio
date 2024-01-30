@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "urban_design_services",
+  "info": {
+    "singularName": "urban-design-service",
+    "pluralName": "urban-design-services",
+    "displayName": "urbanDesignService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serviceImages": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-images.service-images"
+    }
+  }
+}

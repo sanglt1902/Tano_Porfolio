@@ -4,7 +4,7 @@
   "info": {
     "singularName": "footer-image",
     "pluralName": "footer-images",
-    "displayName": "Footer Image",
+    "displayName": "footerImage",
     "description": ""
   },
   "options": {
@@ -12,9 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "FooterImages": {
+    "footerImages": {
       "type": "media",
       "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"

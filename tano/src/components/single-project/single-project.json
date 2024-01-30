@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_single_project_single_projects",
+  "info": {
+    "displayName": "singleProject"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}

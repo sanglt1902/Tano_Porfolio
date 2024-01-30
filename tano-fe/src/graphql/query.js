@@ -5,7 +5,7 @@ export const GET_FOOTER_IMAGES = gql`
     footerImage(publicationState: $publicationState) {
       data {
         attributes {
-          FooterImages {
+          footerImages {
             data {
               attributes {
                 url

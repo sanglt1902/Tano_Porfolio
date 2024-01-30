@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_home_video_home_videos",
+  "info": {
+    "displayName": "homeVideo"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "type_1": {
+      "type": "string"
+    },
+    "type_2": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "videoUrl": {
+      "type": "string"
+    }
+  }
+}

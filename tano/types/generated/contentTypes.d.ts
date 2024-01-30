@@ -897,6 +897,37 @@ export interface ApiAboutTestimonialAboutTestimonial
   };
 }
 
+export interface ApiAgencyMinimalServiceAgencyMinimalService
+  extends Schema.SingleType {
+  collectionName: 'agency_minimal_services';
+  info: {
+    singularName: 'agency-minimal-service';
+    pluralName: 'agency-minimal-services';
+    displayName: 'agencyMinimalService';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceImages: Attribute.Component<'service-images.service-images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::agency-minimal-service.agency-minimal-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::agency-minimal-service.agency-minimal-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContactHeroBannerContactHeroBanner
   extends Schema.SingleType {
   collectionName: 'contact_hero_banners';
@@ -928,19 +959,50 @@ export interface ApiContactHeroBannerContactHeroBanner
   };
 }
 
+export interface ApiDecorPlanServiceDecorPlanService extends Schema.SingleType {
+  collectionName: 'decor_plan_services';
+  info: {
+    singularName: 'decor-plan-service';
+    pluralName: 'decor-plan-services';
+    displayName: 'decorPlanService';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceImages: Attribute.Component<'service-images.service-images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::decor-plan-service.decor-plan-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::decor-plan-service.decor-plan-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterImageFooterImage extends Schema.SingleType {
   collectionName: 'footer_images';
   info: {
     singularName: 'footer-image';
     pluralName: 'footer-images';
-    displayName: 'Footer Image';
+    displayName: 'footerImage';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    FooterImages: Attribute.Media;
+    footerImages: Attribute.Media;
+    background: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -952,6 +1014,134 @@ export interface ApiFooterImageFooterImage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::footer-image.footer-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeGetToKnowHomeGetToKnow extends Schema.SingleType {
+  collectionName: 'home_get_to_knows';
+  info: {
+    singularName: 'home-get-to-know';
+    pluralName: 'home-get-to-knows';
+    displayName: 'homeGetToKnow';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media;
+    name: Attribute.String;
+    location: Attribute.String;
+    testimonial: Attribute.Component<'testimonial.testimonial'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-get-to-know.home-get-to-know',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-get-to-know.home-get-to-know',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeHeroBannerHomeHeroBanner extends Schema.SingleType {
+  collectionName: 'home_hero_banners';
+  info: {
+    singularName: 'home-hero-banner';
+    pluralName: 'home-hero-banners';
+    displayName: 'homeHeroBanner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    homeHeroBanner: Attribute.Component<
+      'home-hero-banner.home-hero-banner',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-hero-banner.home-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-hero-banner.home-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeVideoHomeVideo extends Schema.SingleType {
+  collectionName: 'home_videos';
+  info: {
+    singularName: 'home-video';
+    pluralName: 'home-videos';
+    displayName: 'homeVideo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    homeVideo: Attribute.Component<'home-video.home-video', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-video.home-video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-video.home-video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInteriorDesignServiceInteriorDesignService
+  extends Schema.SingleType {
+  collectionName: 'interior_design_services';
+  info: {
+    singularName: 'interior-design-service';
+    pluralName: 'interior-design-services';
+    displayName: 'interiorDesignService';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceImages: Attribute.Component<'service-images.service-images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::interior-design-service.interior-design-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::interior-design-service.interior-design-service',
       'oneToOne',
       'admin::user'
     > &
@@ -989,6 +1179,67 @@ export interface ApiOurTeamOurTeam extends Schema.SingleType {
   };
 }
 
+export interface ApiProjectProject extends Schema.SingleType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    singleProject: Attribute.Component<'single-project.single-project', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiUrbanDesignServiceUrbanDesignService
+  extends Schema.SingleType {
+  collectionName: 'urban_design_services';
+  info: {
+    singularName: 'urban-design-service';
+    pluralName: 'urban-design-services';
+    displayName: 'urbanDesignService';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceImages: Attribute.Component<'service-images.service-images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::urban-design-service.urban-design-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::urban-design-service.urban-design-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1011,9 +1262,17 @@ declare module '@strapi/types' {
       'api::about-get-to-know.about-get-to-know': ApiAboutGetToKnowAboutGetToKnow;
       'api::about-hero-banner.about-hero-banner': ApiAboutHeroBannerAboutHeroBanner;
       'api::about-testimonial.about-testimonial': ApiAboutTestimonialAboutTestimonial;
+      'api::agency-minimal-service.agency-minimal-service': ApiAgencyMinimalServiceAgencyMinimalService;
       'api::contact-hero-banner.contact-hero-banner': ApiContactHeroBannerContactHeroBanner;
+      'api::decor-plan-service.decor-plan-service': ApiDecorPlanServiceDecorPlanService;
       'api::footer-image.footer-image': ApiFooterImageFooterImage;
+      'api::home-get-to-know.home-get-to-know': ApiHomeGetToKnowHomeGetToKnow;
+      'api::home-hero-banner.home-hero-banner': ApiHomeHeroBannerHomeHeroBanner;
+      'api::home-video.home-video': ApiHomeVideoHomeVideo;
+      'api::interior-design-service.interior-design-service': ApiInteriorDesignServiceInteriorDesignService;
       'api::our-team.our-team': ApiOurTeamOurTeam;
+      'api::project.project': ApiProjectProject;
+      'api::urban-design-service.urban-design-service': ApiUrbanDesignServiceUrbanDesignService;
     }
   }
 }

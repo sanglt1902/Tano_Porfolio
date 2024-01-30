@@ -190,17 +190,17 @@ export default async function Home() {
           </div>
           <ul className="social-links clearfix">
             <li>
-              <a href="index.html">
+              <a href="#">
                 <i className="icon-3" />
               </a>
             </li>
             <li>
-              <a href="index.html">
+              <a href="#">
                 <i className="icon-4" />
               </a>
             </li>
             <li>
-              <a href="index.html">
+              <a href="#">
                 <i className="icon-5" />
               </a>
             </li>
@@ -308,11 +308,11 @@ export default async function Home() {
                   data-wow-delay="00ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="service-details-2.html" className="inner-box">
+                  <a href="/agency-minimal" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-2.png" alt="" />
                     </div>
-                    <h4>Interior Design</h4>
+                    <h4>Agency Minimal</h4>
                   </a>
                 </div>
               </div>
@@ -322,11 +322,11 @@ export default async function Home() {
                   data-wow-delay="200ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="service-details-2.html" className="inner-box">
+                  <a href="/interior-design" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-3.png" alt="" />
                     </div>
-                    <h4>Architecture</h4>
+                    <h4>Interior Design</h4>
                   </a>
                 </div>
               </div>
@@ -336,7 +336,7 @@ export default async function Home() {
                   data-wow-delay="400ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="service-details-3.html" className="inner-box">
+                  <a href="/urban-design" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-4.png" alt="" />
                     </div>
@@ -350,11 +350,11 @@ export default async function Home() {
                   data-wow-delay="600ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="service-details-4.html" className="inner-box">
+                  <a href="/decor-plan" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-5.png" alt="" />
                     </div>
-                    <h4>Discr Design</h4>
+                    <h4>Decor Plan</h4>
                   </a>
                 </div>
               </div>
@@ -513,9 +513,7 @@ export default async function Home() {
                     <div className="content-box">
                       <div className="text">
                         <h2>
-                          <a href="project-details.html">
-                            CLASSIC HOTEL PROJECT
-                          </a>
+                          <a href="#">CLASSIC HOTEL PROJECT</a>
                         </h2>
                         <p>
                           <i className="far fa-map-marker-alt" />
@@ -524,7 +522,7 @@ export default async function Home() {
                         <span className="big-text">01</span>
                       </div>
                       <div className="link">
-                        <a href="project-details.html">
+                        <a href="#">
                           <i className="icon-7" />
                         </a>
                       </div>
@@ -539,7 +537,7 @@ export default async function Home() {
                     <div className="content-box">
                       <div className="text">
                         <h2>
-                          <a href="project-details.html">
+                          <a href="#">
                             Apex HOTEL <br />
                             PROJECT
                           </a>
@@ -551,7 +549,7 @@ export default async function Home() {
                         <span className="big-text">02</span>
                       </div>
                       <div className="link">
-                        <a href="project-details.html">
+                        <a href="#">
                           <i className="icon-7" />
                         </a>
                       </div>
@@ -566,9 +564,7 @@ export default async function Home() {
                     <div className="content-box">
                       <div className="text">
                         <h2>
-                          <a href="project-details.html">
-                            Minimal HOTEL PROJECT
-                          </a>
+                          <a href="#">Minimal HOTEL PROJECT</a>
                         </h2>
                         <p>
                           <i className="far fa-map-marker-alt" />
@@ -577,7 +573,7 @@ export default async function Home() {
                         <span className="big-text">03</span>
                       </div>
                       <div className="link">
-                        <a href="project-details.html">
+                        <a href="#">
                           <i className="icon-7" />
                         </a>
                       </div>
@@ -592,9 +588,7 @@ export default async function Home() {
                     <div className="content-box">
                       <div className="text">
                         <h2>
-                          <a href="project-details.html">
-                            Luxury HOTEL PROJECT
-                          </a>
+                          <a href="#">Luxury HOTEL PROJECT</a>
                         </h2>
                         <p>
                           <i className="far fa-map-marker-alt" />
@@ -603,7 +597,7 @@ export default async function Home() {
                         <span className="big-text">04</span>
                       </div>
                       <div className="link">
-                        <a href="project-details.html">
+                        <a href="#">
                           <i className="icon-7" />
                         </a>
                       </div>
@@ -618,7 +612,7 @@ export default async function Home() {
                     <div className="content-box">
                       <div className="text">
                         <h2>
-                          <a href="project-details.html">Delux HOTEL PROJECT</a>
+                          <a href="#">Delux HOTEL PROJECT</a>
                         </h2>
                         <p>
                           <i className="far fa-map-marker-alt" />
@@ -627,7 +621,7 @@ export default async function Home() {
                         <span className="big-text">05</span>
                       </div>
                       <div className="link">
-                        <a href="project-details.html">
+                        <a href="#">
                           <i className="icon-7" />
                         </a>
                       </div>
@@ -637,8 +631,8 @@ export default async function Home() {
               </div>
             </div>
             <div className="more-btn centred">
-              <a href="project.html" className="theme-btn btn-one">
-                View All Pojects
+              <a href="/projects" className="theme-btn btn-one">
+                View All Projects
               </a>
             </div>
           </div>
@@ -688,7 +682,7 @@ export default async function Home() {
         </section>
         {/* clients-section end */}
         {/* news-section */}
-        <section className="news-section">
+        {/* <section className="news-section">
           <div className="line-shape">
             <div className="line line-1" />
             <div className="line line-2" />
@@ -895,7 +889,7 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/* news-section end */}
         <Footer />
         <ScrollToTop />

@@ -61,9 +61,9 @@ function MainHeader() {
                     >
                       <a href="#">Services</a>
                       <ul>
-                        <li>
+                        {/* <li>
                           <a href="/our-services">Our Services</a>
-                        </li>
+                        </li> */}
                         <li>
                           <a href="/agency-minimal">Agency Minimal</a>
                         </li>
@@ -106,9 +106,9 @@ function MainHeader() {
                 </div>
               </nav>
               <div className="menu-right-content">
-                <div className="search-box-outer search-toggler">
+                {/* <div className="search-box-outer search-toggler">
                   <i className="icon-1" />
-                </div>
+                </div> */}
                 <div className="nav-btn nav-toggler navSidebar-button">
                   <i className="icon-2" />
                 </div>
@@ -131,9 +131,9 @@ function MainHeader() {
                 {/*Keep This Empty / Menu will come through Javascript*/}
               </nav>
               <div className="menu-right-content">
-                <div className="search-box-outer search-toggler">
+                {/* <div className="search-box-outer search-toggler">
                   <i className="icon-1" />
-                </div>
+                </div> */}
                 <div className="nav-btn nav-toggler navSidebar-button">
                   <i className="icon-2" />
                 </div>

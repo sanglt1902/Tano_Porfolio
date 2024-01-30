@@ -5,7 +5,7 @@ import { BASE_URL } from "../constants/url";
 
 async function Footer() {
   const images = await loadData();
-  const footerImages = images?.footerImage?.data?.attributes?.FooterImages;
+  const footerImages = images?.footerImage?.data?.attributes?.footerImages;
 
   // const BASE_URL = process.env.NEXT_PUBLIC_DB_HOST;
 

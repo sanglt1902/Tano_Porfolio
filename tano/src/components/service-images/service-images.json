@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_service_images_service_images",
+  "info": {
+    "displayName": "serviceImages"
+  },
+  "options": {},
+  "attributes": {
+    "heroBanner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "representImage1": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "representImage2": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "representImage3": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

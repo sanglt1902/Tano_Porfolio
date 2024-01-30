@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_videos",
+  "info": {
+    "singularName": "home-video",
+    "pluralName": "home-videos",
+    "displayName": "homeVideo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "homeVideo": {
+      "displayName": "homeVideo",
+      "type": "component",
+      "repeatable": true,
+      "component": "home-video.home-video"
+    }
+  }
+}
