@@ -904,6 +904,7 @@ export interface ApiAgencyMinimalServiceAgencyMinimalService
     singularName: 'agency-minimal-service';
     pluralName: 'agency-minimal-services';
     displayName: 'agencyMinimalService';
+    description: '';
   };
   options: {
     draftAndPublish: true;

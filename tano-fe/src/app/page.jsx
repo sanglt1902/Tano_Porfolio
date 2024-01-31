@@ -6,7 +6,22 @@ import ScrollToTop from "./components/ScrollToTop";
 import SearchPopup from "./components/SearchPopup";
 import SidebarCartItem from "./components/SidebarCartItem";
 
+import {
+  GET_HOME_HERO_BANNER,
+  GET_HOME_GET_TO_KNOW,
+  GET_HOME_VIDEOS,
+  GET_HOME_PROJECTS_LIST,
+  GET_ABOUT_CLIENT_SECTION,
+} from "@/graphql/query";
+import { BASE_URL } from "./constants/url";
+
 export default async function Home() {
+  const heroBanner = await loadHeroBanner();
+  const getToKnowInfo = await loadGetToKnowInfo();
+  const videos = await loadVideos();
+  const projectsList = await loadProjectsList();
+  const clientSection = await loadClientSection();
+
   return (
     <>
       <div className="boxed_wrapper">
@@ -24,168 +39,61 @@ export default async function Home() {
             className="banner-carousel owl-carousel owl-theme owl-dots-none"
             id="sync1"
           >
-            <div className="slide-item">
-              <div
-                className="image-layer"
-                style={{
-                  backgroundImage: "url(assets/images/banner/banner-1.jpg)",
-                }}
-              />
-              <div className="auto-container">
-                <div className="content-box">
-                  <div className="icon-box">
-                    <img src="assets/images/icons/icon-1.png" alt="" />
-                  </div>
-                  <h2>
-                    DESIGNING A BETTER, <br />
-                    <span>MORE BEAUTIFUL WORLD SINCE</span> 1935
-                  </h2>
-                  <div className="btn-box">
-                    <a href="index.html" className="theme-btn btn-one">
-                      View The Projects
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="slide-item">
-              <div
-                className="image-layer"
-                style={{
-                  backgroundImage: "url(assets/images/banner/banner-2.jpg)",
-                }}
-              />
-              <div className="auto-container">
-                <div className="content-box">
-                  <div className="icon-box">
-                    <img src="assets/images/icons/icon-1.png" alt="" />
-                  </div>
-                  <h2>
-                    DESIGNING A BETTER, <br />
-                    <span>MORE BEAUTIFUL WORLD SINCE</span> 1935
-                  </h2>
-                  <div className="btn-box">
-                    <a href="index.html" className="theme-btn btn-one">
-                      View The Projects
-                    </a>
+            {heroBanner?.homeHeroBanner?.data?.attributes?.homeHeroBanner.map(
+              (banner) => (
+                <div className="slide-item" key={banner.id}>
+                  <div
+                    className="image-layer"
+                    style={{
+                      backgroundImage: `url(${BASE_URL}${banner?.Image?.data?.attributes?.url})`,
+                    }}
+                  />
+                  <div className="auto-container">
+                    <div className="content-box">
+                      <div className="icon-box">
+                        <img src="assets/images/icons/icon-1.png" alt="" />
+                      </div>
+                      <h2>
+                        DESIGNING A BETTER, <br />
+                        <span>MORE BEAUTIFUL WORLD SINCE</span> 1935
+                      </h2>
+                      <div className="btn-box">
+                        <a href="/projects" className="theme-btn btn-one">
+                          View All Projects
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="slide-item">
-              <div
-                className="image-layer"
-                style={{
-                  backgroundImage: "url(assets/images/banner/banner-3.jpg)",
-                }}
-              />
-              <div className="auto-container">
-                <div className="content-box">
-                  <div className="icon-box">
-                    <img src="assets/images/icons/icon-1.png" alt="" />
-                  </div>
-                  <h2>
-                    DESIGNING A BETTER, <br />
-                    <span>MORE BEAUTIFUL WORLD SINCE</span> 1935
-                  </h2>
-                  <div className="btn-box">
-                    <a href="index.html" className="theme-btn btn-one">
-                      View The Projects
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="slide-item">
-              <div
-                className="image-layer"
-                style={{
-                  backgroundImage: "url(assets/images/banner/banner-4.jpg)",
-                }}
-              />
-              <div className="auto-container">
-                <div className="content-box">
-                  <div className="icon-box">
-                    <img src="assets/images/icons/icon-1.png" alt="" />
-                  </div>
-                  <h2>
-                    DESIGNING A BETTER, <br />
-                    <span>MORE BEAUTIFUL WORLD SINCE</span> 1935
-                  </h2>
-                  <div className="btn-box">
-                    <a href="index.html" className="theme-btn btn-one">
-                      View The Projects
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+              )
+            )}
           </div>
           <div className="banner-thumb-inner clearfix">
             <div
               className="owl-carousel owl-theme owl-dots-none owl-nav-none"
               id="sync2"
             >
-              <div className="single-item">
-                <span className="count-text">01</span>
-                <h6>Apex</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">02</span>
-                <h6>Minimal</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">03</span>
-                <h6>Luxury</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">04</span>
-                <h6>Delux</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">01</span>
-                <h6>Apex</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">02</span>
-                <h6>Minimal</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">03</span>
-                <h6>Luxury</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">04</span>
-                <h6>Delux</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">01</span>
-                <h6>Apex</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">02</span>
-                <h6>Minimal</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">03</span>
-                <h6>Luxury</h6>
-                <p>San Diego, California</p>
-              </div>
-              <div className="single-item">
-                <span className="count-text">04</span>
-                <h6>Delux</h6>
-                <p>San Diego, California</p>
-              </div>
+              {heroBanner?.homeHeroBanner?.data?.attributes?.homeHeroBanner.map(
+                (banner, index) => (
+                  <div className="single-item">
+                    <span className="count-text">0{index + 1}</span>
+                    <h6>{banner.name}</h6>
+                    <p>{banner.location}</p>
+                  </div>
+                )
+              )}
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
+              <div className="single-item"></div>
             </div>
           </div>
           <ul className="social-links clearfix">
@@ -231,11 +139,18 @@ export default async function Home() {
                     className="overlay-anim-white-bg image p_relative d_block"
                     data-animation="overlay-animation"
                   >
-                    <img src="assets/images/resource/about-1.jpg" alt="" />
+                    <img
+                      src={`${BASE_URL}${getToKnowInfo?.homeGetToKnow?.data?.attributes?.Image?.data?.attributes?.url}`}
+                      alt=""
+                    />
                   </figure>
                   <div className="text-inner">
-                    <h6>APEX</h6>
-                    <p>San Diego, California</p>
+                    <h6>
+                      {getToKnowInfo?.homeGetToKnow?.data?.attributes?.name}
+                    </h6>
+                    <p>
+                      {getToKnowInfo?.homeGetToKnow?.data?.attributes?.location}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -273,16 +188,29 @@ export default async function Home() {
                     </div>
                     <div className="inner">
                       <figure className="author-thumb">
-                        <img src="assets/images/resource/author-1.jpg" alt="" />
+                        <img
+                          src={`${BASE_URL}${getToKnowInfo?.homeGetToKnow?.data?.attributes?.testimonial?.image?.data?.attributes?.url}`}
+                          alt=""
+                        />
                       </figure>
                       <p>
-                        “ Enim auctor est et, amet. Ante ridiculus sed eget
-                        felis, aliquam venenatis. Amet dolor feugiat ligula
-                        gravida a malesuada eu adipiscing volutpat. us enim,
-                        tempor sed in dictum. “
+                        {
+                          getToKnowInfo?.homeGetToKnow?.data?.attributes
+                            ?.testimonial?.description
+                        }
                       </p>
                       <div className="designation">
-                        CEO - <span>Jone Doue</span>
+                        {
+                          getToKnowInfo?.homeGetToKnow?.data?.attributes
+                            ?.testimonial?.role
+                        }{" "}
+                        -{" "}
+                        <span>
+                          {
+                            getToKnowInfo?.homeGetToKnow?.data?.attributes
+                              ?.testimonial?.name
+                          }
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -372,114 +300,36 @@ export default async function Home() {
           </div>
           <div className="large-container">
             <div className="single-item-carousel owl-carousel owl-theme owl-nav-none">
-              <div
-                className="inner-box"
-                style={{
-                  backgroundImage: "url(assets/images/background/video-bg.jpg)",
-                }}
-              >
-                <div className="content-box">
-                  <div className="text">
-                    <h2>
-                      BUNGALOW DARK <span>HOUSE</span>
-                    </h2>
-                    <h4>
-                      <i className="far fa-map-marker-alt" />
-                      Melbourne VIC, Australia
-                    </h4>
-                  </div>
-                  <div className="video-btn">
-                    <a
-                      href="https://www.youtube.com/watch?v=nfP5N9Yc72A&t=28s"
-                      className="lightbox-image"
-                      data-caption=""
-                    >
-                      <i className="icon-13" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="inner-box"
-                style={{
-                  backgroundImage: "url(assets/images/background/video-bg.jpg)",
-                }}
-              >
-                <div className="content-box">
-                  <div className="text">
-                    <h2>
-                      BUNGALOW DARK <span>HOUSE</span>
-                    </h2>
-                    <h4>
-                      <i className="far fa-map-marker-alt" />
-                      Melbourne VIC, Australia
-                    </h4>
-                  </div>
-                  <div className="video-btn">
-                    <a
-                      href="https://www.youtube.com/watch?v=nfP5N9Yc72A&t=28s"
-                      className="lightbox-image"
-                      data-caption=""
-                    >
-                      <i className="icon-13" />
-                    </a>
+              {videos?.homeVideo?.data?.attributes?.homeVideo.map((video) => (
+                <div
+                  className="inner-box"
+                  style={{
+                    backgroundImage: `url(${BASE_URL}${video?.image?.data?.attributes?.url})`,
+                  }}
+                  key={video.id}
+                >
+                  <div className="content-box">
+                    <div className="text">
+                      <h2>
+                        {video?.type_1} <span>{video?.type_2}</span>
+                      </h2>
+                      <h4>
+                        <i className="far fa-map-marker-alt" />
+                        {video?.location}
+                      </h4>
+                    </div>
+                    <div className="video-btn">
+                      <a
+                        href={video?.videoUrl}
+                        className="lightbox-image"
+                        data-caption=""
+                      >
+                        <i className="icon-13" />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className="inner-box"
-                style={{
-                  backgroundImage: "url(assets/images/background/video-bg.jpg)",
-                }}
-              >
-                <div className="content-box">
-                  <div className="text">
-                    <h2>
-                      BUNGALOW DARK <span>HOUSE</span>
-                    </h2>
-                    <h4>
-                      <i className="far fa-map-marker-alt" />
-                      Melbourne VIC, Australia
-                    </h4>
-                  </div>
-                  <div className="video-btn">
-                    <a
-                      href="https://www.youtube.com/watch?v=nfP5N9Yc72A&t=28s"
-                      className="lightbox-image"
-                      data-caption=""
-                    >
-                      <i className="icon-13" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="inner-box"
-                style={{
-                  backgroundImage: "url(assets/images/background/video-bg.jpg)",
-                }}
-              >
-                <div className="content-box">
-                  <div className="text">
-                    <h2>
-                      BUNGALOW DARK <span>HOUSE</span>
-                    </h2>
-                    <h4>
-                      <i className="far fa-map-marker-alt" />
-                      Melbourne VIC, Australia
-                    </h4>
-                  </div>
-                  <div className="video-btn">
-                    <a
-                      href="https://www.youtube.com/watch?v=nfP5N9Yc72A&t=28s"
-                      className="lightbox-image"
-                      data-caption=""
-                    >
-                      <i className="icon-13" />
-                    </a>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -505,129 +355,37 @@ export default async function Home() {
             </div>
             <div className="carousel-content">
               <div className="five-item-carousel owl-carousel owl-theme owl-dots-none">
-                <div className="project-block-one">
-                  <div className="inner-box">
-                    <figure className="image-box">
-                      <img src="assets/images/project/project-1.jpg" alt="" />
-                    </figure>
-                    <div className="content-box">
-                      <div className="text">
-                        <h2>
-                          <a href="#">CLASSIC HOTEL PROJECT</a>
-                        </h2>
-                        <p>
-                          <i className="far fa-map-marker-alt" />
-                          Melbourne VIC, Australia
-                        </p>
-                        <span className="big-text">01</span>
-                      </div>
-                      <div className="link">
-                        <a href="#">
-                          <i className="icon-7" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="project-block-one">
-                  <div className="inner-box">
-                    <figure className="image-box">
-                      <img src="assets/images/project/project-2.jpg" alt="" />
-                    </figure>
-                    <div className="content-box">
-                      <div className="text">
-                        <h2>
-                          <a href="#">
-                            Apex HOTEL <br />
-                            PROJECT
-                          </a>
-                        </h2>
-                        <p>
-                          <i className="far fa-map-marker-alt" />
-                          Melbourne VIC, Australia
-                        </p>
-                        <span className="big-text">02</span>
-                      </div>
-                      <div className="link">
-                        <a href="#">
-                          <i className="icon-7" />
-                        </a>
+                {projectsList?.project?.data?.attributes?.singleProject.map(
+                  (project, index) => (
+                    <div className="project-block-one" key={project.id}>
+                      <div className="inner-box">
+                        <figure className="image-box">
+                          <img
+                            src={`${BASE_URL}${project?.image?.data?.attributes?.url}`}
+                            alt=""
+                          />
+                        </figure>
+                        <div className="content-box">
+                          <div className="text">
+                            <h2>
+                              <a href="#">{project?.name}</a>
+                            </h2>
+                            <p>
+                              <i className="far fa-map-marker-alt" />
+                              {project?.location}
+                            </p>
+                            <span className="big-text">0{index + 1}</span>
+                          </div>
+                          <div className="link">
+                            <a href="#">
+                              <i className="icon-7" />
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className="project-block-one">
-                  <div className="inner-box">
-                    <figure className="image-box">
-                      <img src="assets/images/project/project-3.jpg" alt="" />
-                    </figure>
-                    <div className="content-box">
-                      <div className="text">
-                        <h2>
-                          <a href="#">Minimal HOTEL PROJECT</a>
-                        </h2>
-                        <p>
-                          <i className="far fa-map-marker-alt" />
-                          Melbourne VIC, Australia
-                        </p>
-                        <span className="big-text">03</span>
-                      </div>
-                      <div className="link">
-                        <a href="#">
-                          <i className="icon-7" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="project-block-one">
-                  <div className="inner-box">
-                    <figure className="image-box">
-                      <img src="assets/images/project/project-4.jpg" alt="" />
-                    </figure>
-                    <div className="content-box">
-                      <div className="text">
-                        <h2>
-                          <a href="#">Luxury HOTEL PROJECT</a>
-                        </h2>
-                        <p>
-                          <i className="far fa-map-marker-alt" />
-                          Melbourne VIC, Australia
-                        </p>
-                        <span className="big-text">04</span>
-                      </div>
-                      <div className="link">
-                        <a href="#">
-                          <i className="icon-7" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="project-block-one">
-                  <div className="inner-box">
-                    <figure className="image-box">
-                      <img src="assets/images/project/project-5.jpg" alt="" />
-                    </figure>
-                    <div className="content-box">
-                      <div className="text">
-                        <h2>
-                          <a href="#">Delux HOTEL PROJECT</a>
-                        </h2>
-                        <p>
-                          <i className="far fa-map-marker-alt" />
-                          Melbourne VIC, Australia
-                        </p>
-                        <span className="big-text">05</span>
-                      </div>
-                      <div className="link">
-                        <a href="#">
-                          <i className="icon-7" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  )
+                )}
               </div>
             </div>
             <div className="more-btn centred">
@@ -652,31 +410,13 @@ export default async function Home() {
           </div>
           <div className="auto-container">
             <div className="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-              <figure className="clients-logo">
-                <a href="index.html">
-                  <img src="assets/images/clients/clients-1.png" alt="" />
-                </a>
-              </figure>
-              <figure className="clients-logo">
-                <a href="index.html">
-                  <img src="assets/images/clients/clients-2.png" alt="" />
-                </a>
-              </figure>
-              <figure className="clients-logo">
-                <a href="index.html">
-                  <img src="assets/images/clients/clients-3.png" alt="" />
-                </a>
-              </figure>
-              <figure className="clients-logo">
-                <a href="index.html">
-                  <img src="assets/images/clients/clients-4.png" alt="" />
-                </a>
-              </figure>
-              <figure className="clients-logo">
-                <a href="index.html">
-                  <img src="assets/images/clients/clients-5.png" alt="" />
-                </a>
-              </figure>
+              {clientSection?.aboutClientSection?.data?.attributes?.aboutClientSection?.data.map(
+                (client) => (
+                  <figure className="clients-logo" key={client?.id}>
+                    <img src={`${BASE_URL}${client?.attributes?.url}`} alt="" />
+                  </figure>
+                )
+              )}
             </div>
           </div>
         </section>
@@ -897,3 +637,58 @@ export default async function Home() {
     </>
   );
 }
+
+const loadHeroBanner = async () => {
+  const { data } = await getClient().query({
+    query: GET_HOME_HERO_BANNER,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};
+
+const loadGetToKnowInfo = async () => {
+  const { data } = await getClient().query({
+    query: GET_HOME_GET_TO_KNOW,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};
+
+const loadVideos = async () => {
+  const { data } = await getClient().query({
+    query: GET_HOME_VIDEOS,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};
+
+const loadProjectsList = async () => {
+  const { data } = await getClient().query({
+    query: GET_HOME_PROJECTS_LIST,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};
+
+const loadClientSection = async () => {
+  const { data } = await getClient().query({
+    query: GET_ABOUT_CLIENT_SECTION,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};

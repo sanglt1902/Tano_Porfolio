@@ -7,7 +7,12 @@ import ScrollToTop from "../components/ScrollToTop";
 import SearchPopup from "../components/SearchPopup";
 import SidebarCartItem from "../components/SidebarCartItem";
 
-function AgencyMinimal() {
+import { GET_AGENCY_MINIMAL_SERVICE } from "@/graphql/query";
+import { getClient } from "../../../client";
+import { BASE_URL } from "../constants/url";
+
+export default async function AgencyMinimal() {
+  const representImages = await loadRepresentImages();
   return (
     <>
       <div className="boxed_wrapper">
@@ -21,8 +26,7 @@ function AgencyMinimal() {
             <div
               className="bg-layer"
               style={{
-                backgroundImage:
-                  "url(assets/images/background/page-title-3.jpg)",
+                backgroundImage: `url(${BASE_URL}${representImages?.agencyMinimalService?.data?.attributes?.serviceImages?.heroBanner?.data?.attributes?.url})`,
               }}
             />
             <div className="large-container">
@@ -83,7 +87,7 @@ function AgencyMinimal() {
                       <div className="col-lg-6 col-md-6 col-sm-12 small-column">
                         <figure className="image">
                           <img
-                            src="assets/images/service/service-1.jpg"
+                            src={`${BASE_URL}${representImages?.agencyMinimalService?.data?.attributes?.serviceImages?.representImage1?.data?.attributes?.url}`}
                             alt=""
                           />
                         </figure>
@@ -91,7 +95,7 @@ function AgencyMinimal() {
                       <div className="col-lg-6 col-md-6 col-sm-12 small-column">
                         <figure className="image">
                           <img
-                            src="assets/images/service/service-2.jpg"
+                            src={`${BASE_URL}${representImages?.agencyMinimalService?.data?.attributes?.serviceImages?.representImage2?.data?.attributes?.url}`}
                             alt=""
                           />
                         </figure>
@@ -99,7 +103,7 @@ function AgencyMinimal() {
                       <div className="col-lg-12 col-md-12 col-sm-12 big-column">
                         <figure className="image">
                           <img
-                            src="assets/images/service/service-3.jpg"
+                            src={`${BASE_URL}${representImages?.agencyMinimalService?.data?.attributes?.serviceImages?.representImage3?.data?.attributes?.url}`}
                             alt=""
                           />
                         </figure>
@@ -120,4 +124,13 @@ function AgencyMinimal() {
   );
 }
 
-export default AgencyMinimal;
+const loadRepresentImages = async () => {
+  const { data } = await getClient().query({
+    query: GET_AGENCY_MINIMAL_SERVICE,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};

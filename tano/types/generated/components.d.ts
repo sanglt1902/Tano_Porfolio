@@ -46,6 +46,7 @@ export interface ServiceImagesServiceImages extends Schema.Component {
   collectionName: 'components_service_images_service_images';
   info: {
     displayName: 'serviceImages';
+    description: '';
   };
   attributes: {
     heroBanner: Attribute.Media;

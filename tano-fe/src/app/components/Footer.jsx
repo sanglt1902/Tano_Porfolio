@@ -7,8 +7,6 @@ async function Footer() {
   const images = await loadData();
   const footerImages = images?.footerImage?.data?.attributes?.footerImages;
 
-  // const BASE_URL = process.env.NEXT_PUBLIC_DB_HOST;
-
   return (
     <>
       {/* main-footer */}
@@ -43,7 +41,7 @@ async function Footer() {
         <div
           className="bg-layer"
           style={{
-            backgroundImage: "url(/assets/images/background/footer-bg.jpg)",
+            backgroundImage: `url(${BASE_URL}${images?.footerImage?.data?.attributes?.background?.data?.attributes?.url})`,
           }}
         />
         <div className="large-container">
