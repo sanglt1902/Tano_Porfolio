@@ -81,8 +81,8 @@ export const GET_ABOUT_GET_TO_KNOW = gql`
 `;
 
 export const GET_ABOUT_TESTIMONIALS = gql`
-  query GetAboutTestimonial($id: ID) {
-    aboutTestimonial(id: $id) {
+  query GetAboutTestimonial($publicationState: PublicationState) {
+    aboutTestimonial(publicationState: $publicationState) {
       data {
         attributes {
           aboutTestimonialBackground {
@@ -92,7 +92,7 @@ export const GET_ABOUT_TESTIMONIALS = gql`
               }
             }
           }
-          singleTesimonial {
+          singleTestimonial {
             image {
               data {
                 attributes {
@@ -121,30 +121,6 @@ export const GET_ABOUT_CLIENT_SECTION = gql`
                 url
               }
             }
-          }
-        }
-      }
-    }
-  }
-`;
-
-export const GET_OUR_TEAM = gql`
-  query GetOurTeam($publicationState: PublicationState) {
-    ourTeam(publicationState: $publicationState) {
-      data {
-        attributes {
-          ourTeam {
-            image {
-              data {
-                attributes {
-                  url
-                }
-              }
-            }
-            name
-            role
-            facebook
-            instagram
           }
         }
       }
@@ -223,28 +199,6 @@ export const GET_HOME_VIDEOS = gql`
             type_2
             location
             videoUrl
-          }
-        }
-      }
-    }
-  }
-`;
-
-export const GET_HOME_PROJECTS_LIST = gql`
-  query GetProjects($publicationState: PublicationState) {
-    project(publicationState: $publicationState) {
-      data {
-        attributes {
-          singleProject {
-            name
-            location
-            image {
-              data {
-                attributes {
-                  url
-                }
-              }
-            }
           }
         }
       }
@@ -410,6 +364,183 @@ export const GET_DECOR_PLAN_SERVICE = gql`
               }
             }
           }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_PROJECT_PAGE_HERO_BANNER = gql`
+  query GetProjectPageHeroBanner($publicationState: PublicationState) {
+    projectPageHeroBanner(publicationState: $publicationState) {
+      data {
+        attributes {
+          projectPageHeroBanner {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_PROJECTS_LIST = gql`
+  query GetProjectDetails($publicationState: PublicationState) {
+    projectDetails(publicationState: $publicationState) {
+      data {
+        id
+        attributes {
+          name
+          location
+          category
+          projectsPageImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          homeImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_PROJECT_DETAIL = gql`
+  query GetProjectDetail($id: ID) {
+    projectDetail(id: $id) {
+      data {
+        id
+        attributes {
+          name
+          location
+          description
+          detailPageImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          detailPageHeroBanner {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          designSolutionContent
+          designSolutionImage1 {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          designSolutionImage2 {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_TEAM_PAGE_HERO_BANNER = gql`
+  query GetTeamPageHeroBanner($publicationState: PublicationState) {
+    teamPageHeroBanner(publicationState: $publicationState) {
+      data {
+        attributes {
+          teamPageHeroBanner {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_OUR_TEAM = gql`
+  query GetOurTeamDetails($publicationState: PublicationState) {
+    ourTeamDetails(publicationState: $publicationState) {
+      data {
+        id
+        attributes {
+          aboutImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          teamPageImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          name
+          role
+          level
+          facebook
+          instagram
+        }
+      }
+    }
+  }
+`;
+
+export const GET_TEAM_MEMBER_DETAIL = gql`
+  query GetOurTeamDetail($id: ID) {
+    ourTeamDetail(id: $id) {
+      data {
+        id
+        attributes {
+          detailHeroBanner {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          detailRepresentImage {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          detailDescription
+          name
+          role
+          level
+          facebook
+          instagram
+          age
+          experience
+          skills
+          mobilePhoneNumber
+          email
         }
       }
     }

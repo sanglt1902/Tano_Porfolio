@@ -10,7 +10,7 @@ import {
   GET_HOME_HERO_BANNER,
   GET_HOME_GET_TO_KNOW,
   GET_HOME_VIDEOS,
-  GET_HOME_PROJECTS_LIST,
+  GET_PROJECTS_LIST,
   GET_ABOUT_CLIENT_SECTION,
 } from "@/graphql/query";
 import { BASE_URL } from "./constants/url";
@@ -75,7 +75,7 @@ export default async function Home() {
             >
               {heroBanner?.homeHeroBanner?.data?.attributes?.homeHeroBanner.map(
                 (banner, index) => (
-                  <div className="single-item">
+                  <div className="single-item" key={banner?.id}>
                     <span className="count-text">0{index + 1}</span>
                     <h6>{banner.name}</h6>
                     <p>{banner.location}</p>
@@ -348,31 +348,30 @@ export default async function Home() {
               <h2>
                 Our Completed{" "}
                 <span>
-                  Architecture <br />
-                  Projects
+                  Architecture Projects
                 </span>
               </h2>
             </div>
             <div className="carousel-content">
               <div className="five-item-carousel owl-carousel owl-theme owl-dots-none">
-                {projectsList?.project?.data?.attributes?.singleProject.map(
+                {projectsList?.projectDetails?.data.map(
                   (project, index) => (
-                    <div className="project-block-one" key={project.id}>
+                    <div className="project-block-one" key={project?.attributes?.name}>
                       <div className="inner-box">
                         <figure className="image-box">
                           <img
-                            src={`${BASE_URL}${project?.image?.data?.attributes?.url}`}
+                            src={`${BASE_URL}${project?.attributes?.homeImage?.data?.attributes?.url}`}
                             alt=""
                           />
                         </figure>
                         <div className="content-box">
                           <div className="text">
                             <h2>
-                              <a href="#">{project?.name}</a>
+                              <a href="#">{project?.attributes?.name}</a>
                             </h2>
                             <p>
                               <i className="far fa-map-marker-alt" />
-                              {project?.location}
+                              {project?.attributes?.location}
                             </p>
                             <span className="big-text">0{index + 1}</span>
                           </div>
@@ -673,7 +672,7 @@ const loadVideos = async () => {
 
 const loadProjectsList = async () => {
   const { data } = await getClient().query({
-    query: GET_HOME_PROJECTS_LIST,
+    query: GET_PROJECTS_LIST,
     variables: {
       publicationState: "LIVE",
     },

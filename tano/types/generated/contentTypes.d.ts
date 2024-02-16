@@ -861,21 +861,19 @@ export interface ApiAboutHeroBannerAboutHeroBanner extends Schema.SingleType {
   };
 }
 
-export interface ApiAboutTestimonialAboutTestimonial
-  extends Schema.CollectionType {
+export interface ApiAboutTestimonialAboutTestimonial extends Schema.SingleType {
   collectionName: 'about_testimonials';
   info: {
     singularName: 'about-testimonial';
     pluralName: 'about-testimonials';
     displayName: 'aboutTestimonial';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     aboutTestimonialBackground: Attribute.Media;
-    singleTesimonial: Attribute.Component<
+    singleTestimonial: Attribute.Component<
       'single-tesimonial.single-tesimonial',
       true
     >;
@@ -1150,29 +1148,44 @@ export interface ApiInteriorDesignServiceInteriorDesignService
   };
 }
 
-export interface ApiOurTeamOurTeam extends Schema.SingleType {
-  collectionName: 'our_teams';
+export interface ApiOurTeamDetailOurTeamDetail extends Schema.CollectionType {
+  collectionName: 'our_team_details';
   info: {
-    singularName: 'our-team';
-    pluralName: 'our-teams';
-    displayName: 'ourTeam';
+    singularName: 'our-team-detail';
+    pluralName: 'our-team-details';
+    displayName: 'ourTeamDetail';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    ourTeam: Attribute.Component<'our-team.our-team', true>;
+    aboutImage: Attribute.Media;
+    teamPageImage: Attribute.Media;
+    name: Attribute.String;
+    role: Attribute.String;
+    facebook: Attribute.String;
+    instagram: Attribute.String;
+    level: Attribute.String;
+    age: Attribute.String;
+    experience: Attribute.String;
+    skills: Attribute.String;
+    mobilePhoneNumber: Attribute.String;
+    email: Attribute.Email;
+    detailHeroBanner: Attribute.Media;
+    detailRepresentImage: Attribute.Media;
+    detailDescription: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::our-team.our-team',
+      'api::our-team-detail.our-team-detail',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::our-team.our-team',
+      'api::our-team-detail.our-team-detail',
       'oneToOne',
       'admin::user'
     > &
@@ -1180,29 +1193,102 @@ export interface ApiOurTeamOurTeam extends Schema.SingleType {
   };
 }
 
-export interface ApiProjectProject extends Schema.SingleType {
-  collectionName: 'projects';
+export interface ApiProjectDetailProjectDetail extends Schema.CollectionType {
+  collectionName: 'project_details';
   info: {
-    singularName: 'project';
-    pluralName: 'projects';
-    displayName: 'project';
+    singularName: 'project-detail';
+    pluralName: 'project-details';
+    displayName: 'projectDetail';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    singleProject: Attribute.Component<'single-project.single-project', true>;
+    homeImage: Attribute.Media;
+    projectsPageImage: Attribute.Media;
+    name: Attribute.String;
+    location: Attribute.String;
+    category: Attribute.String;
+    detailPageImage: Attribute.Media;
+    detailPageHeroBanner: Attribute.Media;
+    description: Attribute.RichText;
+    designSolutionContent: Attribute.Text;
+    designSolutionImage1: Attribute.Media;
+    designSolutionImage2: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::project.project',
+      'api::project-detail.project-detail',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::project.project',
+      'api::project-detail.project-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectPageHeroBannerProjectPageHeroBanner
+  extends Schema.SingleType {
+  collectionName: 'project_page_hero_banners';
+  info: {
+    singularName: 'project-page-hero-banner';
+    pluralName: 'project-page-hero-banners';
+    displayName: 'projectPageHeroBanner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    projectPageHeroBanner: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project-page-hero-banner.project-page-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project-page-hero-banner.project-page-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTeamPageHeroBannerTeamPageHeroBanner
+  extends Schema.SingleType {
+  collectionName: 'team_page_hero_banners';
+  info: {
+    singularName: 'team-page-hero-banner';
+    pluralName: 'team-page-hero-banners';
+    displayName: 'teamPageHeroBanner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    teamPageHeroBanner: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::team-page-hero-banner.team-page-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::team-page-hero-banner.team-page-hero-banner',
       'oneToOne',
       'admin::user'
     > &
@@ -1271,8 +1357,10 @@ declare module '@strapi/types' {
       'api::home-hero-banner.home-hero-banner': ApiHomeHeroBannerHomeHeroBanner;
       'api::home-video.home-video': ApiHomeVideoHomeVideo;
       'api::interior-design-service.interior-design-service': ApiInteriorDesignServiceInteriorDesignService;
-      'api::our-team.our-team': ApiOurTeamOurTeam;
-      'api::project.project': ApiProjectProject;
+      'api::our-team-detail.our-team-detail': ApiOurTeamDetailOurTeamDetail;
+      'api::project-detail.project-detail': ApiProjectDetailProjectDetail;
+      'api::project-page-hero-banner.project-page-hero-banner': ApiProjectPageHeroBannerProjectPageHeroBanner;
+      'api::team-page-hero-banner.team-page-hero-banner': ApiTeamPageHeroBannerTeamPageHeroBanner;
       'api::urban-design-service.urban-design-service': ApiUrbanDesignServiceUrbanDesignService;
     }
   }

@@ -37,19 +37,20 @@ function SidebarCartItem() {
                       aliquam venenatis. Amet dolor feugiat ligula gravida a
                       malesuada volutpat.
                     </p>
-                    <a href="about.html" className="theme-btn btn-one">
+                    <a href="/about" className="theme-btn btn-one">
                       About Us
                     </a>
                   </div>
                   <div className="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
-                      <li>Chicago 12, Melborne City, USA</li>
+                      <li>87 Lê Văn Huân, phường 13, quận Tân Bình <br />
+                      Thành phố Hồ Chí Minh, Việt Nam</li>
                       <li>
-                        <a href="tel:+8801682648101">+88 01682648101</a>
+                        <a href="tel:0394438632">0394438632</a>
                       </li>
                       <li>
-                        <a href="mailto:info@example.com">info@example.com</a>
+                        <a href="mailto:info@example.com">tanodesign@gmail.com</a>
                       </li>
                     </ul>
                   </div>

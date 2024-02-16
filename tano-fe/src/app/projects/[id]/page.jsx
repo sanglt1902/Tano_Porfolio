@@ -5,8 +5,16 @@ import MainHeader from "../../components/MainHeader";
 import ScrollToTop from "../../components/ScrollToTop";
 import SearchPopup from "../../components/SearchPopup";
 import SidebarCartItem from "../../components/SidebarCartItem";
+import MarkdownToHtml from "../../components/MarkdownToHtml"
 
-function ProjectDetail() {
+import { GET_PROJECT_DETAIL } from "@/graphql/query";
+import { BASE_URL } from "../../constants/url";
+import { getClient } from "../../../../client";
+
+export default async function ProjectDetail({ params: { id } }) {
+  const projectDetail = await loadProjectDetail(id)
+  const strapiMarkdownContent = projectDetail?.projectDetail?.data?.attributes?.description;
+
   return (
     <>
       <div className="boxed_wrapper">
@@ -21,7 +29,7 @@ function ProjectDetail() {
               className="bg-layer"
               style={{
                 backgroundImage:
-                  "url(/assets/images/background/page-title-5.jpg)",
+                `url(${BASE_URL}${projectDetail?.projectDetail?.data?.attributes?.detailPageHeroBanner?.data?.attributes?.url})`,
               }}
             />
             <div className="large-container">
@@ -39,11 +47,11 @@ function ProjectDetail() {
               <div className="project-block-two">
                 <div className="inner-box">
                   <figure className="image-box">
-                    <img src="/assets/images/project/project-15.jpg" alt="" />
+                    <img src={`${BASE_URL}${projectDetail?.projectDetail?.data?.attributes?.detailPageImage?.data?.attributes?.url}`} alt="" />
                   </figure>
                   <div className="text">
-                    <h6>APEX</h6>
-                    <p>San Diego, California</p>
+                    <h6>{projectDetail?.projectDetail?.data?.attributes?.name}</h6>
+                    <p>{projectDetail?.projectDetail?.data?.attributes?.location}</p>
                   </div>
                 </div>
               </div>
@@ -54,38 +62,7 @@ function ProjectDetail() {
                   </h2>
                 </div>
                 <div className="text">
-                  <p>
-                    Consequat metus, non cursus dolor vitae orci. Mauris etiam
-                    sed vitae cras vel dolor at urna. Gravida mi tincidunt
-                    dictum vitae. Euismod ullamcorper sit blandit quis.
-                    Consectetur pellentesque amet bibendum faucibus nisl. Non
-                    vestibulum convallis nunc nec. Bibendum nunc et congue
-                    venenatis malesuada morbi ut quam massa. Non eu quis lacus,
-                    volutpat diam aliquam tristique. Morbi massa facilisi diam
-                    quis cras pellentesque aliquam donec orci.
-                  </p>
-                  <p>
-                    Et dictum diam tempus orci tristique volutpat sed. Metus
-                    quam hendrerit sed massa amet, amet, mauris mi, nunc. Nulla
-                    ut egestas congue at id est elit. Sagittis, egestas at nibh
-                    mauris at molestie a. Nunc ac aliquam nibh ac, et nunc, arcu
-                    feugiat. Quis arcu faucibus tempus lacinia lacus cras lacus.
-                    Consequat, feugiat eget facilisi dictum quis. Viverra
-                    tempus, nisl, aliquet consectetur tortor pellentesque. Eu
-                    pharetra, nunc proin diam ut.
-                  </p>
-                  <p>
-                    Urna etiam arcu ligula tortor sociis libero. Adipiscing
-                    pharetra est, nisi, in sit. Aliquam imperdiet consectetur
-                    ipsum mauris ac nunc praesent pellentesque hendrerit. Varius
-                    duis nulla tincidunt mauris, maecenas hendrerit tellus.
-                    Congue pellentesque mus metus id urna, sit. Maecenas
-                    sagittis, in consequat faucibus tristique quisque lectus.
-                    Tincidunt vel commodo nec augue blandit lacus. Diam eros,
-                    odio nunc congue enim ultrices rhoncus imperdiet. Fringilla
-                    orci suspendisse elit mauris, vitae. Commodo enim vulputate
-                    egestas in.
-                  </p>
+                  <MarkdownToHtml markdownContent={strapiMarkdownContent} />
                 </div>
               </div>
               <div className="content-two">
@@ -93,20 +70,11 @@ function ProjectDetail() {
                   <h2>
                     Find out the{" "}
                     <span>
-                      design <br />
-                      solution
+                      design solution
                     </span>
-                    .
                   </h2>
                   <p>
-                    Consequat metus, non cursus dolor vitae orci. Mauris etiam
-                    sed vitae cras vel dolor at urna. Gravida mi tincidunt
-                    dictum vitae. Euismod ullamcorper sit blandit quis.
-                    Consectetur pellentesque amet bibendum faucibus nisl. Non
-                    vestibulum convallis nunc nec. Bibendum nunc et congue
-                    venenatis malesuada morbi ut quam massa. Non eu quis lacus,
-                    volutpat diam aliquam tristique. Morbi massa facilisi diam
-                    quis cras pellentesque aliquam donec orci.
+                    {projectDetail?.projectDetail?.data?.attributes?.designSolutionContent}
                   </p>
                 </div>
                 <div className="image-box">
@@ -114,7 +82,7 @@ function ProjectDetail() {
                     <div className="col-lg-6 col-md-6 col-sm-12 image-column">
                       <figure className="image">
                         <img
-                          src="/assets/images/project/project-16.jpg"
+                          src={`${BASE_URL}${projectDetail?.projectDetail?.data?.attributes?.designSolutionImage1?.data?.attributes?.url}`}
                           alt=""
                         />
                       </figure>
@@ -122,7 +90,7 @@ function ProjectDetail() {
                     <div className="col-lg-6 col-md-6 col-sm-12 image-column">
                       <figure className="image">
                         <img
-                          src="/assets/images/project/project-17.jpg"
+                          src={`${BASE_URL}${projectDetail?.projectDetail?.data?.attributes?.designSolutionImage2?.data?.attributes?.url}`}
                           alt=""
                         />
                       </figure>
@@ -141,4 +109,13 @@ function ProjectDetail() {
   );
 }
 
-export default ProjectDetail;
+const loadProjectDetail = async (id) => {
+  const { data } = await getClient().query({
+    query: GET_PROJECT_DETAIL,
+    variables: {
+      id: id,
+    },
+  });
+
+  return data;
+};

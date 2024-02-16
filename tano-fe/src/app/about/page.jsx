@@ -206,7 +206,7 @@ export default async function About() {
         />
         <div className="large-container">
           <div className="three-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-            {testimonials?.aboutTestimonial?.data?.attributes?.singleTesimonial.map(
+            {testimonials?.aboutTestimonial?.data?.attributes?.singleTestimonial.map(
               (testimonial) => (
                 <div className="testimonial-block-two" key={testimonial.id}>
                   <div className="inner-box">
@@ -253,25 +253,25 @@ export default async function About() {
             <h2>Our Team</h2>
           </div>
           <div className="three-item-carousel owl-carousel owl-theme owl-nav-none">
-            {ourTeamInfo?.ourTeam?.data?.attributes?.ourTeam?.map(
+            {ourTeamInfo?.ourTeamDetails?.data?.map(
               (person, index) => (
-                <div className="team-block-one" key={person?.id}>
+                <div className="team-block-one" key={person?.attributes?.name}>
                   <div className="inner-box">
                     <div className="image-box">
                       <figure className="image">
                         <img
-                          src={`${BASE_URL}${person?.image?.data?.attributes?.url}`}
+                          src={`${BASE_URL}${person?.attributes?.aboutImage?.data?.attributes?.url}`}
                           alt=""
                         />
                       </figure>
                       <ul className="social-links clearfix">
                         <li>
-                          <a href={`${person?.facebook}`}>
+                          <a href={`${person?.attributes?.facebook}`}>
                             <i className="icon-3" />
                           </a>
                         </li>
                         <li>
-                          <a href={`${person?.instagram}`}>
+                          <a href={`${person?.attributes?.instagram}`}>
                             <i className="icon-4" />
                           </a>
                         </li>
@@ -280,9 +280,9 @@ export default async function About() {
                     <div className="content-box">
                       <span className="count-text">0{index + 1}</span>
                       <h4>
-                        <a href="team-details.html">{person?.name}</a>
+                        <a href={`/team/${person?.attributes?.name}`}>{person?.attributes?.name}</a>
                       </h4>
-                      <span className="designation">{person?.role}</span>
+                      <span className="designation">{person?.attributes?.level}</span>
                     </div>
                   </div>
                 </div>

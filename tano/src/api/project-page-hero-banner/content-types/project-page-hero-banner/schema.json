@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "project_page_hero_banners",
+  "info": {
+    "singularName": "project-page-hero-banner",
+    "pluralName": "project-page-hero-banners",
+    "displayName": "projectPageHeroBanner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "projectPageHeroBanner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

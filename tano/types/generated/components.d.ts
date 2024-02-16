@@ -27,21 +27,6 @@ export interface HomeVideoHomeVideo extends Schema.Component {
   };
 }
 
-export interface OurTeamOurTeam extends Schema.Component {
-  collectionName: 'components_our_team_our_teams';
-  info: {
-    displayName: 'ourTeam';
-    description: '';
-  };
-  attributes: {
-    image: Attribute.Media;
-    name: Attribute.String;
-    role: Attribute.String;
-    facebook: Attribute.String;
-    instagram: Attribute.String;
-  };
-}
-
 export interface ServiceImagesServiceImages extends Schema.Component {
   collectionName: 'components_service_images_service_images';
   info: {
@@ -53,18 +38,6 @@ export interface ServiceImagesServiceImages extends Schema.Component {
     representImage1: Attribute.Media;
     representImage2: Attribute.Media;
     representImage3: Attribute.Media;
-  };
-}
-
-export interface SingleProjectSingleProject extends Schema.Component {
-  collectionName: 'components_single_project_single_projects';
-  info: {
-    displayName: 'singleProject';
-  };
-  attributes: {
-    image: Attribute.Media;
-    name: Attribute.String;
-    location: Attribute.String;
   };
 }
 
@@ -100,9 +73,7 @@ declare module '@strapi/types' {
     export interface Components {
       'home-hero-banner.home-hero-banner': HomeHeroBannerHomeHeroBanner;
       'home-video.home-video': HomeVideoHomeVideo;
-      'our-team.our-team': OurTeamOurTeam;
       'service-images.service-images': ServiceImagesServiceImages;
-      'single-project.single-project': SingleProjectSingleProject;
       'single-tesimonial.single-tesimonial': SingleTesimonialSingleTesimonial;
       'testimonial.testimonial': TestimonialTestimonial;
     }

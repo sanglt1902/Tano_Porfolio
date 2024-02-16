@@ -6,7 +6,14 @@ import ScrollToTop from "../components/ScrollToTop";
 import SearchPopup from "../components/SearchPopup";
 import SidebarCartItem from "../components/SidebarCartItem";
 
-function Projects() {
+import { GET_PROJECT_PAGE_HERO_BANNER, GET_PROJECTS_LIST } from "@/graphql/query";
+import { BASE_URL } from "../constants/url";
+import { getClient } from "../../../client";
+
+export default async function Projects() {
+  const heroBanner = await loadProjectHeroBanner();
+  const projectsList = await loadProjectsList();
+
   return (
     <>
       <div className="boxed_wrapper">
@@ -21,7 +28,7 @@ function Projects() {
               className="bg-layer"
               style={{
                 backgroundImage:
-                  "url(assets/images/background/page-title-4.jpg)",
+                `url(${BASE_URL}${heroBanner?.projectPageHeroBanner?.data?.attributes?.projectPageHeroBanner?.data?.attributes?.url})`,
               }}
             />
             <div className="large-container">
@@ -39,8 +46,7 @@ function Projects() {
               <h2>
                 Our Completed{" "}
                 <span>
-                  Architecture <br />
-                  Projects
+                  Architecture Projects
                 </span>
               </h2>
             </div>
@@ -78,99 +84,31 @@ function Projects() {
                 </ul>
               </div>
               <div className="items-container row clearfix">
-                <div className="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all product interior_design urban_design">
-                  <div className="project-block-two">
-                    <div className="inner-box">
-                      <figure className="image-box">
-                        <img src="assets/images/project/project-9.jpg" alt="" />
-                      </figure>
-                      <div className="text">
-                        <h6>APEX</h6>
-                        <p>San Diego, California</p>
+                {projectsList?.projectDetails?.data.map(
+                  (project) => (
+                    <div
+                      className={`col-lg-4 col-md-6 col-sm-12 masonry-item small-column all ${project?.attributes?.category}`}
+                      key={project?.id}
+                    >
+                      <div className="project-block-two">
+                        <div className="inner-box">
+                          <figure className="image-box">
+                            <img
+                              src={`${BASE_URL}${project?.attributes?.projectsPageImage?.data?.attributes?.url}`}
+                              alt=""
+                            />
+                          </figure>
+                          <div className="text">
+                            <h6>
+                              <a href={`/projects/${project?.id}`}>{project?.attributes?.name}</a>
+                            </h6>
+                            <p>{project?.attributes?.location}</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all agency_minimal urban_design">
-                  <div className="project-block-two">
-                    <div className="inner-box">
-                      <figure className="image-box">
-                        <img
-                          src="assets/images/project/project-10.jpg"
-                          alt=""
-                        />
-                      </figure>
-                      <div className="text">
-                        <h6>APEX</h6>
-                        <p>San Diego, California</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all product interior_design">
-                  <div className="project-block-two">
-                    <div className="inner-box">
-                      <figure className="image-box">
-                        <img
-                          src="assets/images/project/project-11.jpg"
-                          alt=""
-                        />
-                      </figure>
-                      <div className="text">
-                        <h6>APEX</h6>
-                        <p>San Diego, California</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all agency_minimal interior_design urban_design">
-                  <div className="project-block-two">
-                    <div className="inner-box">
-                      <figure className="image-box">
-                        <img
-                          src="assets/images/project/project-12.jpg"
-                          alt=""
-                        />
-                      </figure>
-                      <div className="text">
-                        <h6>APEX</h6>
-                        <p>San Diego, California</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all urban_design interior_design">
-                  <div className="project-block-two">
-                    <div className="inner-box">
-                      <figure className="image-box">
-                        <img
-                          src="assets/images/project/project-13.jpg"
-                          alt=""
-                        />
-                      </figure>
-                      <div className="text">
-                        <h6>APEX</h6>
-                        <p>San Diego, California</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all agency_minimal urban_design">
-                  <div className="project-block-two">
-                    <div className="inner-box">
-                      <figure className="image-box">
-                        <img
-                          src="assets/images/project/project-14.jpg"
-                          alt=""
-                        />
-                      </figure>
-                      <div className="text">
-                        <h6>APEX</h6>
-                        <p>San Diego, California</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -183,4 +121,24 @@ function Projects() {
   );
 }
 
-export default Projects;
+const loadProjectHeroBanner = async () => {
+  const { data } = await getClient().query({
+    query: GET_PROJECT_PAGE_HERO_BANNER,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};
+
+const loadProjectsList = async () => {
+  const { data } = await getClient().query({
+    query: GET_PROJECTS_LIST,
+    variables: {
+      publicationState: "LIVE",
+    },
+  });
+
+  return data;
+};

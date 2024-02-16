@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_team_details",
+  "info": {
+    "singularName": "our-team-detail",
+    "pluralName": "our-team-details",
+    "displayName": "ourTeamDetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "teamPageImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "string"
+    },
+    "mobilePhoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "detailHeroBanner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "detailRepresentImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "detailDescription": {
+      "type": "text"
+    }
+  }
+}

@@ -48,8 +48,7 @@ async function Footer() {
           <div className="sec-title centred">
             <span className="sub-title">Contact Us</span>
             <h2>
-              Do you need any help? <br />
-              Send Message.
+              Do you need any help?
             </h2>
             <a href="/">
               <i className="icon-7" />

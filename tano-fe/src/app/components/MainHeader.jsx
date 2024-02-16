@@ -28,7 +28,7 @@ function MainHeader() {
           <div className="outer-box">
             <div className="logo-box">
               <figure className="logo">
-                <a href="index.html">
+                <a href="/">
                   <img src="/assets/images/logo.png" alt="" />
                 </a>
               </figure>
