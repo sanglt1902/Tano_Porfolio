@@ -121,11 +121,6 @@ export default async function About() {
                     malesuada eu adipiscing volutpat.
                   </p>
                 </div>
-                <div className="btn-box">
-                  <a href="about.html" className="theme-btn btn-one">
-                    All Informamtion
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -142,11 +137,11 @@ export default async function About() {
                 data-wow-delay="00ms"
                 data-wow-duration="1500ms"
               >
-                <a href="/agency-minimal" className="inner-box">
+                <a href="/architectural-visualization" className="inner-box">
                   <div className="icon-box">
                     <img src="assets/images/icons/icon-2.png" alt="" />
                   </div>
-                  <h4>Agency Minimal</h4>
+                  <h4>Architectural Visualization</h4>
                 </a>
               </div>
             </div>
@@ -156,11 +151,11 @@ export default async function About() {
                 data-wow-delay="200ms"
                 data-wow-duration="1500ms"
               >
-                <a href="/interior-design" className="inner-box">
+                <a href="/interior-visualization" className="inner-box">
                   <div className="icon-box">
                     <img src="assets/images/icons/icon-3.png" alt="" />
                   </div>
-                  <h4>Interior Design</h4>
+                  <h4>Interior Visualization</h4>
                 </a>
               </div>
             </div>
@@ -170,11 +165,11 @@ export default async function About() {
                 data-wow-delay="400ms"
                 data-wow-duration="1500ms"
               >
-                <a href="/urban-design" className="inner-box">
+                <a href="/character-modeling" className="inner-box">
                   <div className="icon-box">
                     <img src="assets/images/icons/icon-4.png" alt="" />
                   </div>
-                  <h4>Urban Design</h4>
+                  <h4>Character Modeling</h4>
                 </a>
               </div>
             </div>
@@ -184,11 +179,11 @@ export default async function About() {
                 data-wow-delay="600ms"
                 data-wow-duration="1500ms"
               >
-                <a href="/decor-plan" className="inner-box">
+                <a href="/product-visualization" className="inner-box">
                   <div className="icon-box">
                     <img src="assets/images/icons/icon-5.png" alt="" />
                   </div>
-                  <h4>Decor Plan</h4>
+                  <h4>Product Visualization</h4>
                 </a>
               </div>
             </div>

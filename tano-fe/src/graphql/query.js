@@ -206,9 +206,9 @@ export const GET_HOME_VIDEOS = gql`
   }
 `;
 
-export const GET_AGENCY_MINIMAL_SERVICE = gql`
-  query GetAgencyMinimalService($publicationState: PublicationState) {
-    agencyMinimalService(publicationState: $publicationState) {
+export const GET_ARCHITECTURAL_VISUALIZATION_SERVICE = gql`
+  query GetArchitecturalVisualizationServiceService($publicationState: PublicationState) {
+    architecturalVisualizationService(publicationState: $publicationState) {
       data {
         attributes {
           serviceImages {
@@ -288,9 +288,9 @@ export const GET_INTERIOR_DESIGN_SERVICE = gql`
   }
 `;
 
-export const GET_URBAN_DESIGN_SERVICE = gql`
-  query GetUrbanDesignService($publicationState: PublicationState) {
-    urbanDesignService(publicationState: $publicationState) {
+export const GET_CHARACTER_MODELING_SERVICE = gql`
+  query GetCharacterModelingService($publicationState: PublicationState) {
+    characterModelingService(publicationState: $publicationState) {
       data {
         attributes {
           serviceImages {
@@ -329,9 +329,9 @@ export const GET_URBAN_DESIGN_SERVICE = gql`
   }
 `;
 
-export const GET_DECOR_PLAN_SERVICE = gql`
-  query GetDecorPlanService($publicationState: PublicationState) {
-    decorPlanService(publicationState: $publicationState) {
+export const GET_PRODUCT_VISUALIZATION_SERVICE = gql`
+  query GetProductVisualizationService($publicationState: PublicationState) {
+    productVisualizationService(publicationState: $publicationState) {
       data {
         attributes {
           serviceImages {

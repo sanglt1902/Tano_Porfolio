@@ -7,10 +7,10 @@ function MainHeader() {
 
   const servicesPaths = [
     "/our-services",
-    "/agency-minimal",
-    "/interior-design",
-    "/urban-design",
-    "/decor-plan",
+    "/architectural-visualization",
+    "/interior-visualization",
+    "/character-modeling",
+    "/product-visualization",
   ];
 
   return (
@@ -65,16 +65,16 @@ function MainHeader() {
                           <a href="/our-services">Our Services</a>
                         </li> */}
                         <li>
-                          <a href="/agency-minimal">Agency Minimal</a>
+                          <a href="/architectural-visualization">Architectural Visualization</a>
                         </li>
                         <li>
-                          <a href="/interior-design">Interior Design</a>
+                          <a href="/interior-visualization">Interior Visualization</a>
                         </li>
                         <li>
-                          <a href="/urban-design">Urban Design</a>
+                          <a href="/character-modeling">Character Modeling</a>
                         </li>
                         <li>
-                          <a href="/decor-plan">Decor Plan</a>
+                          <a href="/product-visualization">Product Visualization</a>
                         </li>
                       </ul>
                     </li>

@@ -63,23 +63,30 @@ export default async function Projects() {
                   <li
                     className="filter"
                     data-role="button"
-                    data-filter=".agency_minimal"
+                    data-filter=".Architectural-Visualization"
                   >
-                    Agency Minimal
+                    Architectural Visualization
                   </li>
                   <li
                     className="filter"
                     data-role="button"
-                    data-filter=".interior_design"
+                    data-filter=".Interior-Visualization"
                   >
-                    Interior Design
+                    Interior Visualization
                   </li>
                   <li
                     className="filter"
                     data-role="button"
-                    data-filter=".urban_design"
+                    data-filter=".Character-Modeling"
                   >
-                    Urban Design
+                    Character Modeling
+                  </li>
+                  <li
+                    className="filter"
+                    data-role="button"
+                    data-filter=".Product-Visualization"
+                  >
+                    Product Visualization
                   </li>
                 </ul>
               </div>

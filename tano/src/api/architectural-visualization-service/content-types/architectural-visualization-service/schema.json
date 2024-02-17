@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "architectural_visualization_services",
+  "info": {
+    "singularName": "architectural-visualization-service",
+    "pluralName": "architectural-visualization-services",
+    "displayName": "architecturalVisualizationService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serviceImages": {
+      "type": "component",
+      "repeatable": false,
+      "component": "service-images.service-images"
+    }
+  }
+}

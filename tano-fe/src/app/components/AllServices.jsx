@@ -14,37 +14,37 @@ function AllServices() {
             <ul className="category-list clearfix">
               <li>
                 <a
-                  href="/agency-minimal"
-                  className={pathname === "/agency-minimal" ? "current" : ""}
+                  href="/architectural-visualization"
+                  className={pathname === "/architectural-visualization" ? "current" : ""}
                 >
-                  Agency Minimal
+                  Architectural Visualization
                   <i className="icon-15" />
                 </a>
               </li>
               <li>
                 <a
-                  href="/interior-design"
-                  className={pathname === "/interior-design" ? "current" : ""}
+                  href="/interior-visualization"
+                  className={pathname === "/interior-visualization" ? "current" : ""}
                 >
-                  Interior Design
+                  Interior Visualization
                   <i className="icon-15" />
                 </a>
               </li>
               <li>
                 <a
-                  href="/urban-design"
-                  className={pathname === "/urban-design" ? "current" : ""}
+                  href="/character-modeling"
+                  className={pathname === "/character-modeling" ? "current" : ""}
                 >
-                  Urban Design
+                  Character Modeling
                   <i className="icon-15" />
                 </a>
               </li>
               <li>
                 <a
-                  href="/decor-plan"
-                  className={pathname === "/decor-plan" ? "current" : ""}
+                  href="/product-visualization"
+                  className={pathname === "/product-visualization" ? "current" : ""}
                 >
-                  Decor Plan
+                  Product Visualization
                   <i className="icon-15" />
                 </a>
               </li>

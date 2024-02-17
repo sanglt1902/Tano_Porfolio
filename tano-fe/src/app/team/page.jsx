@@ -46,24 +46,24 @@ export default async function Team() {
                 <ul className="tab-btns tab-buttons clearfix">
                   <li
                     className="tab-btn active-btn"
-                    data-tab="#web-development"
+                    data-tab="#Designer"
                   >
-                    Web Development
+                    Designer
                   </li>
-                  <li className="tab-btn" data-tab="#ui-ux-design">
-                    UI/UX Design
+                  <li className="tab-btn" data-tab="#3D-Artist">
+                    3D Artist
                   </li>
-                  <li className="tab-btn" data-tab="#graphics-design">
+                  {/* <li className="tab-btn" data-tab="#graphics-design">
                     Graphics Design
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div className="tabs-content">
-                <div className="tab active-tab" id="web-development">
+                <div className="tab active-tab" id="Designer">
                   <div className="row clearfix">
                     {ourTeamInfo?.ourTeamDetails?.data
                       ?.filter((person) =>
-                        person?.attributes?.role.includes("web-development")
+                        person?.attributes?.role.includes("Designer")
                       )
                       .map((person, index) => (
                         <div
@@ -107,11 +107,11 @@ export default async function Team() {
                       ))}
                   </div>
                 </div>
-                <div className="tab" id="ui-ux-design">
+                <div className="tab" id="3D-Artist">
                   <div className="row clearfix">
                     {ourTeamInfo?.ourTeamDetails?.data
                       ?.filter((person) =>
-                        person?.attributes?.role.includes("ui-ux-design")
+                        person?.attributes?.role.includes("3D-Artist")
                       )
                       .map((person, index) => (
                         <div
@@ -155,7 +155,7 @@ export default async function Team() {
                       ))}
                   </div>
                 </div>
-                <div className="tab" id="graphics-design">
+                {/* <div className="tab" id="graphics-design">
                   <div className="row clearfix">
                     {ourTeamInfo?.ourTeamDetails?.data
                       ?.filter((person) =>
@@ -202,7 +202,7 @@ export default async function Team() {
                         </div>
                       ))}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

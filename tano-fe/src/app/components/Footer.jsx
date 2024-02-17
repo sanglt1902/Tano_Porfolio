@@ -47,9 +47,7 @@ async function Footer() {
         <div className="large-container">
           <div className="sec-title centred">
             <span className="sub-title">Contact Us</span>
-            <h2>
-              Do you need any help?
-            </h2>
+            <h2>Do you need any help?</h2>
             <a href="/">
               <i className="icon-7" />
             </a>
@@ -118,19 +116,22 @@ async function Footer() {
                           <i className="icon-5" />
                         </a>
                       </li>
+                      <li className="twitter">
+                        <a href="#" className="fab fa-linkedin-in" />
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="footer-bottom centred">
+          {/* <div className="footer-bottom centred">
             <div className="copyright">
               <h4>
                 Copyright By © <a href="/">Inventarc</a> - 2024
               </h4>
             </div>
-          </div>
+          </div> */}
         </div>
       </footer>
       {/* main-footer end */}

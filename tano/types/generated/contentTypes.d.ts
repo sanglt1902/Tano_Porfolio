@@ -895,14 +895,13 @@ export interface ApiAboutTestimonialAboutTestimonial extends Schema.SingleType {
   };
 }
 
-export interface ApiAgencyMinimalServiceAgencyMinimalService
+export interface ApiArchitecturalVisualizationServiceArchitecturalVisualizationService
   extends Schema.SingleType {
-  collectionName: 'agency_minimal_services';
+  collectionName: 'architectural_visualization_services';
   info: {
-    singularName: 'agency-minimal-service';
-    pluralName: 'agency-minimal-services';
-    displayName: 'agencyMinimalService';
-    description: '';
+    singularName: 'architectural-visualization-service';
+    pluralName: 'architectural-visualization-services';
+    displayName: 'architecturalVisualizationService';
   };
   options: {
     draftAndPublish: true;
@@ -913,13 +912,44 @@ export interface ApiAgencyMinimalServiceAgencyMinimalService
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::agency-minimal-service.agency-minimal-service',
+      'api::architectural-visualization-service.architectural-visualization-service',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::agency-minimal-service.agency-minimal-service',
+      'api::architectural-visualization-service.architectural-visualization-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCharacterModelingServiceCharacterModelingService
+  extends Schema.SingleType {
+  collectionName: 'character_modeling_services';
+  info: {
+    singularName: 'character-modeling-service';
+    pluralName: 'character-modeling-services';
+    displayName: 'characterModelingService';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceImages: Attribute.Component<'service-images.service-images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::character-modeling-service.character-modeling-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::character-modeling-service.character-modeling-service',
       'oneToOne',
       'admin::user'
     > &
@@ -951,36 +981,6 @@ export interface ApiContactHeroBannerContactHeroBanner
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::contact-hero-banner.contact-hero-banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDecorPlanServiceDecorPlanService extends Schema.SingleType {
-  collectionName: 'decor_plan_services';
-  info: {
-    singularName: 'decor-plan-service';
-    pluralName: 'decor-plan-services';
-    displayName: 'decorPlanService';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    serviceImages: Attribute.Component<'service-images.service-images'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::decor-plan-service.decor-plan-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::decor-plan-service.decor-plan-service',
       'oneToOne',
       'admin::user'
     > &
@@ -1193,6 +1193,38 @@ export interface ApiOurTeamDetailOurTeamDetail extends Schema.CollectionType {
   };
 }
 
+export interface ApiProductVisualizationServiceProductVisualizationService
+  extends Schema.SingleType {
+  collectionName: 'product_visualization_services';
+  info: {
+    singularName: 'product-visualization-service';
+    pluralName: 'product-visualization-services';
+    displayName: 'productVisualizationService';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceImages: Attribute.Component<'service-images.service-images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-visualization-service.product-visualization-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-visualization-service.product-visualization-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectDetailProjectDetail extends Schema.CollectionType {
   collectionName: 'project_details';
   info: {
@@ -1296,37 +1328,6 @@ export interface ApiTeamPageHeroBannerTeamPageHeroBanner
   };
 }
 
-export interface ApiUrbanDesignServiceUrbanDesignService
-  extends Schema.SingleType {
-  collectionName: 'urban_design_services';
-  info: {
-    singularName: 'urban-design-service';
-    pluralName: 'urban-design-services';
-    displayName: 'urbanDesignService';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    serviceImages: Attribute.Component<'service-images.service-images'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::urban-design-service.urban-design-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::urban-design-service.urban-design-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1349,19 +1350,19 @@ declare module '@strapi/types' {
       'api::about-get-to-know.about-get-to-know': ApiAboutGetToKnowAboutGetToKnow;
       'api::about-hero-banner.about-hero-banner': ApiAboutHeroBannerAboutHeroBanner;
       'api::about-testimonial.about-testimonial': ApiAboutTestimonialAboutTestimonial;
-      'api::agency-minimal-service.agency-minimal-service': ApiAgencyMinimalServiceAgencyMinimalService;
+      'api::architectural-visualization-service.architectural-visualization-service': ApiArchitecturalVisualizationServiceArchitecturalVisualizationService;
+      'api::character-modeling-service.character-modeling-service': ApiCharacterModelingServiceCharacterModelingService;
       'api::contact-hero-banner.contact-hero-banner': ApiContactHeroBannerContactHeroBanner;
-      'api::decor-plan-service.decor-plan-service': ApiDecorPlanServiceDecorPlanService;
       'api::footer-image.footer-image': ApiFooterImageFooterImage;
       'api::home-get-to-know.home-get-to-know': ApiHomeGetToKnowHomeGetToKnow;
       'api::home-hero-banner.home-hero-banner': ApiHomeHeroBannerHomeHeroBanner;
       'api::home-video.home-video': ApiHomeVideoHomeVideo;
       'api::interior-design-service.interior-design-service': ApiInteriorDesignServiceInteriorDesignService;
       'api::our-team-detail.our-team-detail': ApiOurTeamDetailOurTeamDetail;
+      'api::product-visualization-service.product-visualization-service': ApiProductVisualizationServiceProductVisualizationService;
       'api::project-detail.project-detail': ApiProjectDetailProjectDetail;
       'api::project-page-hero-banner.project-page-hero-banner': ApiProjectPageHeroBannerProjectPageHeroBanner;
       'api::team-page-hero-banner.team-page-hero-banner': ApiTeamPageHeroBannerTeamPageHeroBanner;
-      'api::urban-design-service.urban-design-service': ApiUrbanDesignServiceUrbanDesignService;
     }
   }
 }

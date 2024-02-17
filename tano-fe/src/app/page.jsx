@@ -55,7 +55,7 @@ export default async function Home() {
                       </div>
                       <h2>
                         DESIGNING A BETTER, <br />
-                        <span>MORE BEAUTIFUL WORLD SINCE</span> 1935
+                        <span>MORE BEAUTIFUL WORLD SINCE</span> 2024
                       </h2>
                       <div className="btn-box">
                         <a href="/projects" className="theme-btn btn-one">
@@ -111,6 +111,9 @@ export default async function Home() {
               <a href="#">
                 <i className="icon-5" />
               </a>
+            </li>
+            <li className="twitter">
+              <a href="#" className="fab fa-linkedin-in" />
             </li>
           </ul>
         </section>
@@ -236,11 +239,11 @@ export default async function Home() {
                   data-wow-delay="00ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="/agency-minimal" className="inner-box">
+                  <a href="/architectural-visualization" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-2.png" alt="" />
                     </div>
-                    <h4>Agency Minimal</h4>
+                    <h4>Architectural Visualization</h4>
                   </a>
                 </div>
               </div>
@@ -250,11 +253,11 @@ export default async function Home() {
                   data-wow-delay="200ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="/interior-design" className="inner-box">
+                  <a href="/interior-visualization" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-3.png" alt="" />
                     </div>
-                    <h4>Interior Design</h4>
+                    <h4>Interior Visualization</h4>
                   </a>
                 </div>
               </div>
@@ -264,11 +267,11 @@ export default async function Home() {
                   data-wow-delay="400ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="/urban-design" className="inner-box">
+                  <a href="/character-modeling" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-4.png" alt="" />
                     </div>
-                    <h4>Urban Design</h4>
+                    <h4>Character Modeling</h4>
                   </a>
                 </div>
               </div>
@@ -278,11 +281,11 @@ export default async function Home() {
                   data-wow-delay="600ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="/decor-plan" className="inner-box">
+                  <a href="/product-visualization" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-5.png" alt="" />
                     </div>
-                    <h4>Decor Plan</h4>
+                    <h4>Product Visualization</h4>
                   </a>
                 </div>
               </div>
@@ -346,45 +349,42 @@ export default async function Home() {
             <div className="sec-title">
               <span className="sub-title">Portfolio</span>
               <h2>
-                Our Completed{" "}
-                <span>
-                  Architecture Projects
-                </span>
+                Our Completed <span>Architecture Projects</span>
               </h2>
             </div>
             <div className="carousel-content">
               <div className="five-item-carousel owl-carousel owl-theme owl-dots-none">
-                {projectsList?.projectDetails?.data.map(
-                  (project, index) => (
-                    <div className="project-block-one" key={project?.attributes?.name}>
-                      <div className="inner-box">
-                        <figure className="image-box">
-                          <img
-                            src={`${BASE_URL}${project?.attributes?.homeImage?.data?.attributes?.url}`}
-                            alt=""
-                          />
-                        </figure>
-                        <div className="content-box">
-                          <div className="text">
-                            <h2>
-                              <a href="#">{project?.attributes?.name}</a>
-                            </h2>
-                            <p>
-                              <i className="far fa-map-marker-alt" />
-                              {project?.attributes?.location}
-                            </p>
-                            <span className="big-text">0{index + 1}</span>
-                          </div>
-                          <div className="link">
-                            <a href="#">
-                              <i className="icon-7" />
+                {projectsList?.projectDetails?.data.map((project, index) => (
+                  <div className="project-block-one" key={project?.id}>
+                    <div className="inner-box">
+                      <figure className="image-box">
+                        <img
+                          src={`${BASE_URL}${project?.attributes?.homeImage?.data?.attributes?.url}`}
+                          alt=""
+                        />
+                      </figure>
+                      <div className="content-box">
+                        <div className="text">
+                          <h2>
+                            <a href={`/projects/${project?.id}`}>
+                              {project?.attributes?.name}
                             </a>
-                          </div>
+                          </h2>
+                          <p>
+                            <i className="far fa-map-marker-alt" />
+                            {project?.attributes?.location}
+                          </p>
+                          <span className="big-text">0{index + 1}</span>
+                        </div>
+                        <div className="link">
+                          <a href={`/projects/${project?.id}`}>
+                            <i className="icon-7" />
+                          </a>
                         </div>
                       </div>
                     </div>
-                  )
-                )}
+                  </div>
+                ))}
               </div>
             </div>
             <div className="more-btn centred">
@@ -419,217 +419,6 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        {/* clients-section end */}
-        {/* news-section */}
-        {/* <section className="news-section">
-          <div className="line-shape">
-            <div className="line line-1" />
-            <div className="line line-2" />
-            <div className="line line-3" />
-            <div className="line line-4" />
-          </div>
-          <div className="large-container">
-            <div className="sec-title centred">
-              <span className="sub-title">Blogs</span>
-              <h2>Our Latest News</h2>
-            </div>
-            <div className="row clearfix">
-              <div className="col-lg-3 col-md-6 col-sm-12 news-block">
-                <div className="news-block-one">
-                  <div className="inner-box">
-                    <div className="content-box">
-                      <ul className="post-info clearfix">
-                        <li>
-                          <i className="icon-16" />
-                          <a href="blog-details.html">Author &nbsp;,</a>
-                        </li>
-                        <li>12/12/2022</li>
-                      </ul>
-                      <h3>
-                        <a href="blog-details.html">
-                          A Brief History on the Beginnings of Modern
-                          Architecture
-                        </a>
-                      </h3>
-                      <p>
-                        Penatibus turpis vel eget cursus ut et. Lacus velit,
-                        venenatis eu morbi.
-                      </p>
-                    </div>
-                    <div className="overlay-content">
-                      <div className="overlay-inner">
-                        <ul className="post-info clearfix">
-                          <li>
-                            <i className="icon-16" />
-                            <a href="blog-details.html">Author &nbsp;,</a>
-                          </li>
-                          <li>12/12/2022</li>
-                        </ul>
-                        <h3>
-                          <a href="blog-details.html">
-                            A Brief History on the Beginnings of Modern
-                            Architecture
-                          </a>
-                        </h3>
-                        <p>
-                          Penatibus turpis vel eget cursus ut et. Lacus velit,
-                          venenatis eu morbi egestas amet, nunc. Ut sem libero
-                          sed nisl tincidunt tristique egestas non vitae.
-                          Pulvinar quis duis leo in quis arcu enim.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-12 news-block">
-                <div className="news-block-one">
-                  <div className="inner-box">
-                    <div className="content-box">
-                      <ul className="post-info clearfix">
-                        <li>
-                          <i className="icon-16" />
-                          <a href="blog-details.html">Author &nbsp;,</a>
-                        </li>
-                        <li>12/12/2022</li>
-                      </ul>
-                      <h3>
-                        <a href="blog-details.html">
-                          Electric Feel And Of Other Things Lacinia eget
-                          consecte sed convallis.
-                        </a>
-                      </h3>
-                      <p>
-                        Penatibus turpis vel eget cursus ut et. Lacus velit,
-                        venenatis eu morbi.
-                      </p>
-                    </div>
-                    <div className="overlay-content">
-                      <div className="overlay-inner">
-                        <ul className="post-info clearfix">
-                          <li>
-                            <i className="icon-16" />
-                            <a href="blog-details.html">Author &nbsp;,</a>
-                          </li>
-                          <li>12/12/2022</li>
-                        </ul>
-                        <h3>
-                          <a href="blog-details.html">
-                            Electric Feel And Of Other Things Lacinia eget
-                            consecte sed convallis.
-                          </a>
-                        </h3>
-                        <p>
-                          Penatibus turpis vel eget cursus ut et. Lacus velit,
-                          venenatis eu morbi egestas amet, nunc. Ut sem libero
-                          sed nisl tincidunt tristique egestas non vitae.
-                          Pulvinar quis duis leo in quis arcu enim.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-12 news-block">
-                <div className="news-block-one">
-                  <div className="inner-box">
-                    <div className="content-box">
-                      <ul className="post-info clearfix">
-                        <li>
-                          <i className="icon-16" />
-                          <a href="blog-details.html">Author &nbsp;,</a>
-                        </li>
-                        <li>12/12/2022</li>
-                      </ul>
-                      <h3>
-                        <a href="blog-details.html">
-                          Cras Ultricies Ligula Sed Magna Vivamus Suscipit Eget
-                          Felis Porttitor.
-                        </a>
-                      </h3>
-                      <p>
-                        Penatibus turpis vel eget cursus ut et. Lacus velit,
-                        venenatis eu morbi.
-                      </p>
-                    </div>
-                    <div className="overlay-content">
-                      <div className="overlay-inner">
-                        <ul className="post-info clearfix">
-                          <li>
-                            <i className="icon-16" />
-                            <a href="blog-details.html">Author &nbsp;,</a>
-                          </li>
-                          <li>12/12/2022</li>
-                        </ul>
-                        <h3>
-                          <a href="blog-details.html">
-                            Cras Ultricies Ligula Sed Magna Vivamus Suscipit
-                            Eget Felis Porttitor.
-                          </a>
-                        </h3>
-                        <p>
-                          Penatibus turpis vel eget cursus ut et. Lacus velit,
-                          venenatis eu morbi egestas amet, nunc. Ut sem libero
-                          sed nisl tincidunt tristique egestas non vitae.
-                          Pulvinar quis duis leo in quis arcu enim.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-sm-12 news-block">
-                <div className="news-block-one">
-                  <div className="inner-box">
-                    <div className="content-box">
-                      <ul className="post-info clearfix">
-                        <li>
-                          <i className="icon-16" />
-                          <a href="blog-details.html">Author &nbsp;,</a>
-                        </li>
-                        <li>12/12/2022</li>
-                      </ul>
-                      <h3>
-                        <a href="blog-details.html">
-                          Donec sollicidin nibh porttitor lectus Felis Portitor
-                          Volutpat Diam Sit.
-                        </a>
-                      </h3>
-                      <p>
-                        Penatibus turpis vel eget cursus ut et. Lacus velit,
-                        venenatis eu morbi.
-                      </p>
-                    </div>
-                    <div className="overlay-content">
-                      <div className="overlay-inner">
-                        <ul className="post-info clearfix">
-                          <li>
-                            <i className="icon-16" />
-                            <a href="blog-details.html">Author &nbsp;,</a>
-                          </li>
-                          <li>12/12/2022</li>
-                        </ul>
-                        <h3>
-                          <a href="blog-details.html">
-                            Donec sollicidin nibh porttitor lectus Felis
-                            Portitor Volutpat Diam Sit.
-                          </a>
-                        </h3>
-                        <p>
-                          Penatibus turpis vel eget cursus ut et. Lacus velit,
-                          venenatis eu morbi egestas amet, nunc. Ut sem libero
-                          sed nisl tincidunt tristique egestas non vitae.
-                          Pulvinar quis duis leo in quis arcu enim.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-        {/* news-section end */}
         <Footer />
         <ScrollToTop />
       </div>

@@ -240,25 +240,25 @@ function BlogDetail() {
                       <ul className="category-list clearfix">
                         <li>
                           <a href="blog-details.html" className="current">
-                            Agency Minimal
+                            Architectural Visualization
                             <i className="icon-15" />
                           </a>
                         </li>
                         <li>
                           <a href="blog-details-2.html">
-                            Interior Design
+                            Interior Visualization
                             <i className="icon-15" />
                           </a>
                         </li>
                         <li>
                           <a href="blog-details-3.html">
-                            Urban Design
+                            Character Modeling
                             <i className="icon-15" />
                           </a>
                         </li>
                         <li>
                           <a href="blog-details-4.html">
-                            Decor Plan
+                            Product Visualization
                             <i className="icon-15" />
                           </a>
                         </li>
@@ -284,7 +284,7 @@ function BlogDetail() {
                           <a href="blog-details.html">Minimal</a>
                         </li>
                         <li>
-                          <a href="blog-details.html">Decor Plan</a>
+                          <a href="blog-details.html">Product Visualization</a>
                         </li>
                         <li>
                           <a href="blog-details.html">Urban</a>

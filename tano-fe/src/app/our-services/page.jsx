@@ -125,7 +125,7 @@ function OurServices() {
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-2.png" alt="" />
                     </div>
-                    <h4>Interior Design</h4>
+                    <h4>Interior Visualization</h4>
                     <p>
                       Penatibus turpis vel eget cursus ut et. Lacus velit,
                       venenatis eu morbi egestas ame
@@ -161,7 +161,7 @@ function OurServices() {
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-4.png" alt="" />
                     </div>
-                    <h4>Urban Design</h4>
+                    <h4>Character Modeling</h4>
                     <p>
                       Penatibus turpis vel eget cursus ut et. Lacus velit,
                       venenatis eu morbi egestas ame
@@ -197,7 +197,7 @@ function OurServices() {
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-9.png" alt="" />
                     </div>
-                    <h4>Interior Design</h4>
+                    <h4>Interior Visualization</h4>
                     <p>
                       Penatibus turpis vel eget cursus ut et. Lacus velit,
                       venenatis eu morbi egestas ame
@@ -233,7 +233,7 @@ function OurServices() {
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-11.png" alt="" />
                     </div>
-                    <h4>Urban Design</h4>
+                    <h4>Character Modeling</h4>
                     <p>
                       Penatibus turpis vel eget cursus ut et. Lacus velit,
                       venenatis eu morbi egestas ame
@@ -283,7 +283,7 @@ function OurServices() {
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-2.png" alt="" />
                     </div>
-                    <h4>Interior Design</h4>
+                    <h4>Interior Visualization</h4>
                   </a>
                 </div>
               </div>
@@ -311,7 +311,7 @@ function OurServices() {
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-4.png" alt="" />
                     </div>
-                    <h4>Urban Design</h4>
+                    <h4>Character Modeling</h4>
                   </a>
                 </div>
               </div>
@@ -339,7 +339,7 @@ function OurServices() {
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-9.png" alt="" />
                     </div>
-                    <h4>Interior Design</h4>
+                    <h4>Interior Visualization</h4>
                   </a>
                 </div>
               </div>
@@ -367,7 +367,7 @@ function OurServices() {
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-11.png" alt="" />
                     </div>
-                    <h4>Urban Design</h4>
+                    <h4>Character Modeling</h4>
                   </a>
                 </div>
               </div>
