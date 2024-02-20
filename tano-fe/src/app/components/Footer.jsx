@@ -63,18 +63,17 @@ async function Footer() {
                     <ul className="info-list clearfix">
                       <li>
                         <i className="icon-17" />
-                        <a href="tel:0394438632">0394438632</a>
+                        <a href="tel:0394438632">039 443 8632</a>
                       </li>
                       <li>
                         <i className="icon-18" />
-                        <a href="mailto:tanodesign@gmail.com">
-                          tanodesign@gmail.com
+                        <a href="mailto:tano-studio@gmail.com">
+                          tano-studio@gmail.com
                         </a>
                       </li>
                       <li>
                         <i className="far fa-map-marker-alt" />
-                        87 Lê Văn Huân, phường 13, quận Tân Bình, Thành phố Hồ
-                        Chí Minh, Việt Nam
+                        123 Main Street, Luton Town, USA
                       </li>
                     </ul>
                   </div>

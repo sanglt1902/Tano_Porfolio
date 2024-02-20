@@ -171,18 +171,28 @@ export default async function Home() {
                   </div>
                   <div className="text">
                     <p>
-                      Penatibus turpis vel eget cursus ut et. Lacus velit,
-                      venenatis eu morbi egestas amet, nunc. Ut sem libero sed
-                      nisl tincidunt tristique egestas non vitae. Pulvinar quis
-                      duis leo in quis arcu enim. Vulputate velit mattis
-                      tincidunt nunc sed mauris, sit amet ullamcorper.
-                      Ullamcorper nunc mauris nunc proin sollicitudin mattis
-                      viverra purus congue.
+                      Tano Studio is a beacon of innovation in the architecture
+                      industry, renowned for its unwavering commitment to
+                      excellence and client satisfaction. With a team of highly
+                      skilled architects and designers, Tano Studio brings
+                      dreams to life, crafting spaces that are both functional
+                      and aesthetically pleasing. Through meticulous attention
+                      to detail and a deep understanding of architectural
+                      principles, the studio consistently delivers projects that
+                      exceed expectations.
                     </p>
                     <p>
-                      Enim auctor est et, amet. Ante ridiculus sed eget felis,
-                      aliquam venenatis. Amet dolor feugiat ligula gravida a
-                      malesuada eu adipiscing volutpat.
+                      At Tano Studio, every project is a testament to our
+                      dedication to quality and creativity. From residential
+                      homes to commercial complexes, we approach each endeavor
+                      with a fresh perspective, tailoring our designs to suit
+                      the unique needs and preferences of our clients. Our
+                      collaborative approach ensures that every aspect of the
+                      design process is transparent and client-centric,
+                      fostering a sense of trust and confidence. With Tano
+                      Studio as your trusted architecture company, you can rest
+                      assured that your vision will be realized with precision
+                      and flair.
                     </p>
                   </div>
                   <div className="author-box p_relative d_block">

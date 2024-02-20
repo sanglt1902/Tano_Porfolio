@@ -50,36 +50,50 @@ export default async function AgencyMinimal() {
                       </h2>
                     </div>
                     <p>
-                      Consequat metus, non cursus dolor vitae orci. Mauris etiam
-                      sed vitae cras vel dolor at urna. Gravida mi tincidunt
-                      dictum vitae. Euismod ullamcorper sit blandit quis.
-                      Consectetur pellentesque amet bibendum faucibus nisl. Non
-                      vestibulum convallis nunc nec. Bibendum nunc et congue
-                      venenatis malesuada morbi ut quam massa. Non eu quis
-                      lacus, volutpat diam aliquam tristique. Morbi massa
-                      facilisi diam quis cras pellentesque aliquam donec orci.
+                      Architectural visualization is a crucial aspect of modern
+                      architecture, allowing designers and clients to visualize
+                      proposed structures before they are built. Through
+                      advanced software and techniques, architectural
+                      visualization brings designs to life with stunning detail
+                      and realism. From residential homes to commercial
+                      complexes, architectural visualization provides a clear
+                      representation of how a project will look, feel, and
+                      function in its intended environment. By incorporating
+                      elements such as lighting, materials, and landscaping,
+                      visualizations help stakeholders make informed decisions
+                      and ensure that the final product meets their
+                      expectations.
                     </p>
                     <p>
-                      Et dictum diam tempus orci tristique volutpat sed. Metus
-                      quam hendrerit sed massa amet, amet, mauris mi, nunc.
-                      Nulla ut egestas congue at id est elit. Sagittis, egestas
-                      at nibh mauris at molestie a. Nunc ac aliquam nibh ac, et
-                      nunc, arcu feugiat. Quis arcu faucibus tempus lacinia
-                      lacus cras lacus. Consequat, feugiat eget facilisi dictum
-                      quis. Viverra tempus, nisl, aliquet consectetur tortor
-                      pellentesque. Eu pharetra, nunc proin diam ut.
+                      In architectural visualization, 3D modeling plays a
+                      central role in creating realistic representations of
+                      buildings and spaces. Architects and designers use
+                      specialized software to construct digital models that
+                      accurately depict every aspect of a project, from its
+                      overall form to intricate interior details. These models
+                      serve as the foundation for the visualization process,
+                      allowing for precise manipulation and refinement to
+                      achieve the desired aesthetic and functionality. With
+                      advancements in technology, 3D modeling has become
+                      increasingly sophisticated, enabling architects to explore
+                      complex designs and visualize them with unparalleled
+                      realism.
                     </p>
                     <p>
-                      Urna etiam arcu ligula tortor sociis libero. Adipiscing
-                      pharetra est, nisi, in sit. Aliquam imperdiet consectetur
-                      ipsum mauris ac nunc praesent pellentesque hendrerit.
-                      Varius duis nulla tincidunt mauris, maecenas hendrerit
-                      tellus. Congue pellentesque mus metus id urna, sit.
-                      Maecenas sagittis, in consequat faucibus tristique quisque
-                      lectus. Tincidunt vel commodo nec augue blandit lacus.
-                      Diam eros, odio nunc congue enim ultrices rhoncus
-                      imperdiet. Fringilla orci suspendisse elit mauris, vitae.
-                      Commodo enim vulputate egestas in.
+                      The impact of architectural visualization extends beyond
+                      the design phase, influencing various stages of a
+                      project&apos;s lifecycle. Visualizations aid in
+                      communication between architects, clients, and
+                      stakeholders, facilitating a shared understanding of
+                      design concepts and objectives. They also serve as
+                      powerful marketing tools, allowing developers to showcase
+                      projects to potential buyers or investors. Additionally,
+                      architectural visualization contributes to the broader
+                      discourse on architecture and urban planning, fostering
+                      innovation and creativity within the industry. Overall,
+                      architectural visualization plays a vital role in shaping
+                      the built environment, empowering designers to transform
+                      ideas into tangible realities.
                     </p>
                   </div>
                   <div className="image-box">

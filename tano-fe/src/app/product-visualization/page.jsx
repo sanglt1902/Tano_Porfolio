@@ -50,36 +50,48 @@ export default async function DecorPlan() {
                       </h2>
                     </div>
                     <p>
-                      Consequat metus, non cursus dolor vitae orci. Mauris etiam
-                      sed vitae cras vel dolor at urna. Gravida mi tincidunt
-                      dictum vitae. Euismod ullamcorper sit blandit quis.
-                      Consectetur pellentesque amet bibendum faucibus nisl. Non
-                      vestibulum convallis nunc nec. Bibendum nunc et congue
-                      venenatis malesuada morbi ut quam massa. Non eu quis
-                      lacus, volutpat diam aliquam tristique. Morbi massa
-                      facilisi diam quis cras pellentesque aliquam donec orci.
+                      Product visualization is a dynamic field within the realm
+                      of digital design and marketing, focused on creating
+                      immersive and photorealistic representations of products
+                      for promotional and sales purposes. Leveraging advanced
+                      computer graphics technologies, product visualization
+                      artists meticulously craft digital renderings and
+                      animations that showcase products in their best light,
+                      highlighting features, functionalities, and design
+                      aesthetics. From consumer electronics to automotive
+                      vehicles, furniture, and fashion apparel, product
+                      visualization spans various industries, providing brands
+                      and manufacturers with powerful visual assets to engage
+                      customers and drive sales.
                     </p>
                     <p>
-                      Et dictum diam tempus orci tristique volutpat sed. Metus
-                      quam hendrerit sed massa amet, amet, mauris mi, nunc.
-                      Nulla ut egestas congue at id est elit. Sagittis, egestas
-                      at nibh mauris at molestie a. Nunc ac aliquam nibh ac, et
-                      nunc, arcu feugiat. Quis arcu faucibus tempus lacinia
-                      lacus cras lacus. Consequat, feugiat eget facilisi dictum
-                      quis. Viverra tempus, nisl, aliquet consectetur tortor
-                      pellentesque. Eu pharetra, nunc proin diam ut.
+                      In the competitive landscape of modern commerce, product
+                      visualization serves as a strategic tool for brands to
+                      differentiate themselves, communicate value propositions,
+                      and create compelling brand experiences. Through
+                      high-fidelity renderings and interactive presentations,
+                      companies can showcase product details, customization
+                      options, and usage scenarios, allowing customers to
+                      envision products in their lives before making purchasing
+                      decisions. With the rise of e-commerce platforms and
+                      digital marketing channels, product visualization has
+                      become increasingly integral to online retail strategies,
+                      enabling brands to stand out in crowded marketplaces and
+                      foster deeper connections with consumers.
                     </p>
                     <p>
-                      Urna etiam arcu ligula tortor sociis libero. Adipiscing
-                      pharetra est, nisi, in sit. Aliquam imperdiet consectetur
-                      ipsum mauris ac nunc praesent pellentesque hendrerit.
-                      Varius duis nulla tincidunt mauris, maecenas hendrerit
-                      tellus. Congue pellentesque mus metus id urna, sit.
-                      Maecenas sagittis, in consequat faucibus tristique quisque
-                      lectus. Tincidunt vel commodo nec augue blandit lacus.
-                      Diam eros, odio nunc congue enim ultrices rhoncus
-                      imperdiet. Fringilla orci suspendisse elit mauris, vitae.
-                      Commodo enim vulputate egestas in.
+                      The process of product visualization involves a blend of
+                      technical expertise and creative vision, as artists
+                      utilize cutting-edge software tools and rendering
+                      techniques to achieve stunning visual results. From 3D
+                      modeling and texturing to lighting, shading, and
+                      rendering, product visualization artists meticulously
+                      craft every aspect of the digital representation, striving
+                      for realism, accuracy, and visual impact. By harnessing
+                      the power of digital visualization, brands can transcend
+                      physical limitations, reaching global audiences with
+                      captivating product experiences that inspire confidence,
+                      drive engagement, and foster brand loyalty.
                     </p>
                   </div>
                   <div className="image-box">

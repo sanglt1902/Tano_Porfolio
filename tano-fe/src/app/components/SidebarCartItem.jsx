@@ -28,14 +28,11 @@ function SidebarCartItem() {
                   <div className="content-box">
                     <h4>About Us</h4>
                     <p>
-                      Penatibus turpis vel eget cursus ut et. Lacus velit,
-                      venenatis eu morbi egestas amet, nunc. Ut sem libero sed
-                      nisl tincidunt tristique egestas non vitae.
-                    </p>
-                    <p>
-                      Enim auctor est et, amet. Ante ridiculus sed eget felis,
-                      aliquam venenatis. Amet dolor feugiat ligula gravida a
-                      malesuada volutpat.
+                      Tano Studio excels in architectural excellence, crafting
+                      inspiring spaces with precision and creativity. Our
+                      collaborative approach and commitment to innovation ensure
+                      projects that surpass expectations, marrying beauty with
+                      functionality.
                     </p>
                     <a href="/about" className="theme-btn btn-one">
                       About Us
@@ -44,17 +41,18 @@ function SidebarCartItem() {
                   <div className="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
-                      <li>87 Lê Văn Huân, phường 13, quận Tân Bình <br />
-                      Thành phố Hồ Chí Minh, Việt Nam</li>
+                      <li>123 Main Street, Luton Town, USA</li>
                       <li>
-                        <a href="tel:0394438632">0394438632</a>
+                        <a href="tel:0394438632">039 443 8632</a>
                       </li>
                       <li>
-                        <a href="mailto:info@example.com">tanodesign@gmail.com</a>
+                        <a href="mailto:info@example.com">
+                          tano-studio@gmail.com
+                        </a>
                       </li>
                     </ul>
                   </div>
-                  <ul className="social-box">
+                  {/* <ul className="social-box">
                     <li className="facebook">
                       <a href="#" className="fab fa-facebook-f" />
                     </li>
@@ -70,7 +68,7 @@ function SidebarCartItem() {
                     <li className="youtube">
                       <a href="#" className="fab fa-youtube" />
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
