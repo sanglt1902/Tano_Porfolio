@@ -65,16 +65,22 @@ function MainHeader() {
                           <a href="/our-services">Our Services</a>
                         </li> */}
                         <li>
-                          <a href="/architectural-visualization">Architectural Visualization</a>
+                          <a href="/architectural-visualization">
+                            Architectural Visualization
+                          </a>
                         </li>
                         <li>
-                          <a href="/interior-visualization">Interior Visualization</a>
+                          <a href="/interior-visualization">
+                            Interior Visualization
+                          </a>
                         </li>
                         <li>
                           <a href="/character-modeling">Character Modeling</a>
                         </li>
                         <li>
-                          <a href="/product-visualization">Product Visualization</a>
+                          <a href="/product-visualization">
+                            Product Visualization
+                          </a>
                         </li>
                       </ul>
                     </li>
@@ -121,7 +127,7 @@ function MainHeader() {
           <div className="outer-box">
             <div className="logo-box">
               <figure className="logo">
-                <a href="index.html">
+                <a href="/">
                   <img src="/assets/images/logo.png" alt="" />
                 </a>
               </figure>
@@ -151,8 +157,8 @@ function MainHeader() {
         </div>
         <nav className="menu-box">
           <div className="nav-logo">
-            <a href="index.html">
-              <img src="/assets/images/logo-2.png" alt="" title="" />
+            <a href="/">
+              <img src="/assets/images/logo.png" alt="" title="" />
             </a>
           </div>
           <div className="menu-outer">
@@ -161,41 +167,39 @@ function MainHeader() {
           <div className="contact-info">
             <h4>Contact Info</h4>
             <ul>
-              <li>Chicago 12, Melborne City, USA</li>
+              <li>314 Ngo Quyen street, Ward 10, Ho Chi Minh city, Viet Nam</li>
               <li>
-                <a href="tel:+8801682648101">+88 01682648101</a>
+                <a href="tel:0394438632">039 443 8632</a>
               </li>
               <li>
-                <a href="mailto:info@example.com">info@example.com</a>
+                <a href="mailto:tanostudio0@gmail.com">tanostudio0@gmail.com</a>
               </li>
             </ul>
           </div>
           <div className="social-links">
             <ul className="clearfix">
-              <li>
-                <a href="index.html">
-                  <span className="fab fa-twitter" />
+              <li className="facebook">
+                <a
+                  href="https://www.facebook.com/tano.studio.2024/"
+                  target="_blank"
+                >
+                  <i className="icon-3" />
                 </a>
               </li>
-              <li>
-                <a href="index.html">
-                  <span className="fab fa-facebook-square" />
+              <li className="youtube">
+                <a
+                  href="https://www.youtube.com/channel/UCHD7UbZn3jZ0hzqA3Yo7FRA"
+                  className="fab fa-youtube"
+                  target="_blank"
+                ></a>
+              </li>
+              <li className="twitter">
+                <a href="#">
+                  <i className="icon-5" />
                 </a>
               </li>
-              <li>
-                <a href="index.html">
-                  <span className="fab fa-pinterest-p" />
-                </a>
-              </li>
-              <li>
-                <a href="index.html">
-                  <span className="fab fa-instagram" />
-                </a>
-              </li>
-              <li>
-                <a href="index.html">
-                  <span className="fab fa-youtube" />
-                </a>
+              <li className="linkedin">
+                <a href="#" className="fab fa-linkedin-in" />
               </li>
             </ul>
           </div>

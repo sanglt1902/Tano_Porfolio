@@ -20,11 +20,6 @@ function SidebarCartItem() {
             <div className="sidebar-textwidget">
               <div className="sidebar-info-contents">
                 <div className="content-inner">
-                  <div className="logo">
-                    <a href="index.html">
-                      <img src="/assets/images/logo.png" alt="" />
-                    </a>
-                  </div>
                   <div className="content-box">
                     <h4>About Us</h4>
                     <p>
@@ -41,34 +36,45 @@ function SidebarCartItem() {
                   <div className="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
-                      <li>123 Main Street, Luton Town, USA</li>
+                      <li>
+                        314 Ngo Quyen street, Ward 10, Ho Chi Minh city, Viet
+                        Nam
+                      </li>
                       <li>
                         <a href="tel:0394438632">039 443 8632</a>
                       </li>
                       <li>
-                        <a href="mailto:info@example.com">
-                          tano-studio@gmail.com
+                        <a href="tanostudio0@gmail.com">
+                          tanostudio0@gmail.com
                         </a>
                       </li>
                     </ul>
                   </div>
-                  {/* <ul className="social-box">
+                  <ul className="social-box">
                     <li className="facebook">
-                      <a href="#" className="fab fa-facebook-f" />
+                      <a
+                        href="https://www.facebook.com/tano.studio.2024/"
+                        target="_blank"
+                      >
+                        <i className="icon-3" />
+                      </a>
+                    </li>
+                    <li className="youtube">
+                      <a
+                        href="https://www.youtube.com/channel/UCHD7UbZn3jZ0hzqA3Yo7FRA"
+                        className="fab fa-youtube"
+                        target="_blank"
+                      ></a>
                     </li>
                     <li className="twitter">
-                      <a href="#" className="fab fa-twitter" />
+                      <a href="#">
+                        <i className="icon-5" />
+                      </a>
                     </li>
                     <li className="linkedin">
                       <a href="#" className="fab fa-linkedin-in" />
                     </li>
-                    <li className="instagram">
-                      <a href="#" className="fab fa-instagram" />
-                    </li>
-                    <li className="youtube">
-                      <a href="#" className="fab fa-youtube" />
-                    </li>
-                  </ul> */}
+                  </ul>
                 </div>
               </div>
             </div>

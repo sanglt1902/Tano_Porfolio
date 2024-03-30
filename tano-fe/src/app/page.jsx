@@ -51,7 +51,7 @@ export default async function Home() {
                   <div className="auto-container">
                     <div className="content-box">
                       <div className="icon-box">
-                        <img src="assets/images/icons/icon-1.png" alt="" />
+                        <img src="/assets/images/logo.png" alt="" />
                       </div>
                       <h2>
                         DESIGNING A BETTER, <br />
@@ -97,22 +97,27 @@ export default async function Home() {
             </div>
           </div>
           <ul className="social-links clearfix">
-            <li>
-              <a href="#">
+            <li className="facebook">
+              <a
+                href="https://www.facebook.com/tano.studio.2024/"
+                target="_blank"
+              >
                 <i className="icon-3" />
               </a>
             </li>
-            <li>
-              <a href="#">
-                <i className="icon-4" />
-              </a>
+            <li className="youtube">
+              <a
+                href="https://www.youtube.com/channel/UCHD7UbZn3jZ0hzqA3Yo7FRA"
+                className="fab fa-youtube"
+                target="_blank"
+              ></a>
             </li>
-            <li>
+            <li className="twitter">
               <a href="#">
                 <i className="icon-5" />
               </a>
             </li>
-            <li className="twitter">
+            <li className="linkedin">
               <a href="#" className="fab fa-linkedin-in" />
             </li>
           </ul>

@@ -18,8 +18,8 @@ function ComingSoon() {
           <div className="large-container">
             <div className="inner-box">
               <figure className="logo">
-                <a href="index.html">
-                  <img src="assets/images/logo-2.png" alt="" />
+                <a href="/">
+                  <img src="/assets/images/logo.png" alt="" />
                 </a>
               </figure>
               <h3>Our website is under construction</h3>
@@ -32,7 +32,7 @@ function ComingSoon() {
               </div>
               <div className="form-inner">
                 <h4>Sign up for our latest news &amp; articles.</h4>
-                <form action="index.html" method="post">
+                <form action="/" method="post">
                   <div className="form-group">
                     <input
                       type="email"
@@ -47,7 +47,7 @@ function ComingSoon() {
                 </form>
               </div>
               <div className="btn-box">
-                <a href="index.html" className="theme-btn btn-one">
+                <a href="/" className="theme-btn btn-one">
                   Back To Home
                 </a>
               </div>

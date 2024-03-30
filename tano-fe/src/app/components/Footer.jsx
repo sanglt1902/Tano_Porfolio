@@ -67,13 +67,14 @@ async function Footer() {
                       </li>
                       <li>
                         <i className="icon-18" />
-                        <a href="mailto:tano-studio@gmail.com">
-                          tano-studio@gmail.com
+                        <a href="mailto:tanostudio0@gmail.com">
+                          tanostudio0@gmail.com
                         </a>
                       </li>
                       <li>
                         <i className="far fa-map-marker-alt" />
-                        123 Main Street, Luton Town, USA
+                        314 Ngo Quyen street, Ward 10, Ho Chi Minh city, Viet
+                        Nam
                       </li>
                     </ul>
                   </div>
@@ -85,37 +86,31 @@ async function Footer() {
                     <h3>Newsletter</h3>
                   </div>
                   <div className="widget-content">
-                    {/* <form action="contact.html" method="post">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Email Address"
-                          required=""
-                        />
-                        <button type="submit">Send</button>
-                      </div>
-                    </form> */}
                     <ul className="social-links clearfix">
                       <li>
                         <h4>Social Network :</h4>
                       </li>
-                      <li>
-                        <a href="/">
+                      <li className="facebook">
+                        <a
+                          href="https://www.facebook.com/tano.studio.2024/"
+                          target="_blank"
+                        >
                           <i className="icon-3" />
                         </a>
                       </li>
-                      <li>
-                        <a href="/">
-                          <i className="icon-4" />
-                        </a>
+                      <li className="youtube">
+                        <a
+                          href="https://www.youtube.com/channel/UCHD7UbZn3jZ0hzqA3Yo7FRA"
+                          className="fab fa-youtube"
+                          target="_blank"
+                        ></a>
                       </li>
-                      <li>
-                        <a href="/">
+                      <li className="twitter">
+                        <a href="#">
                           <i className="icon-5" />
                         </a>
                       </li>
-                      <li className="twitter">
+                      <li className="linkedin">
                         <a href="#" className="fab fa-linkedin-in" />
                       </li>
                     </ul>

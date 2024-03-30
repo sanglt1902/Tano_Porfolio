@@ -6,7 +6,10 @@ import ScrollToTop from "../components/ScrollToTop";
 import SearchPopup from "../components/SearchPopup";
 import SidebarCartItem from "../components/SidebarCartItem";
 
-import { GET_PROJECT_PAGE_HERO_BANNER, GET_PROJECTS_LIST } from "@/graphql/query";
+import {
+  GET_PROJECT_PAGE_HERO_BANNER,
+  GET_PROJECTS_LIST,
+} from "@/graphql/query";
 import { BASE_URL } from "../constants/url";
 import { getClient } from "../../../client";
 
@@ -27,8 +30,7 @@ export default async function Projects() {
             <div
               className="bg-layer"
               style={{
-                backgroundImage:
-                `url(${BASE_URL}${heroBanner?.projectPageHeroBanner?.data?.attributes?.projectPageHeroBanner?.data?.attributes?.url})`,
+                backgroundImage: `url(${BASE_URL}${heroBanner?.projectPageHeroBanner?.data?.attributes?.projectPageHeroBanner?.data?.attributes?.url})`,
               }}
             />
             <div className="large-container">
@@ -44,10 +46,7 @@ export default async function Projects() {
           <div className="large-container">
             <div className="sec-title centred">
               <h2>
-                Our Completed{" "}
-                <span>
-                  Architecture Projects
-                </span>
+                Our Completed <span>Architecture Projects</span>
               </h2>
             </div>
             <div className="sortable-masonry">
@@ -91,31 +90,32 @@ export default async function Projects() {
                 </ul>
               </div>
               <div className="items-container row clearfix">
-                {projectsList?.projectDetails?.data.map(
-                  (project) => (
-                    <div
-                      className={`col-lg-4 col-md-6 col-sm-12 masonry-item small-column all ${project?.attributes?.category}`}
-                      key={project?.id}
-                    >
-                      <div className="project-block-two">
-                        <div className="inner-box">
-                          <figure className="image-box">
-                            <img
-                              src={`${BASE_URL}${project?.attributes?.projectsPageImage?.data?.attributes?.url}`}
-                              alt=""
-                            />
-                          </figure>
-                          <div className="text">
-                            <h6>
-                              <a href={`/projects/${project?.id}`}>{project?.attributes?.name}</a>
-                            </h6>
-                            <p>{project?.attributes?.location}</p>
-                          </div>
+                {projectsList?.projectDetails?.data.map((project) => (
+                  <div
+                    className={`col-lg-4 col-md-6 col-sm-12 masonry-item small-column all ${project?.attributes?.category}`}
+                    key={project?.id}
+                  >
+                    <div className="project-block-two">
+                      <a
+                        className="inner-box"
+                        href={`/projects/${project?.id}`}
+                      >
+                        <figure className="image-box">
+                          <img
+                            src={`${BASE_URL}${project?.attributes?.projectsPageImage?.data?.attributes?.url}`}
+                            alt=""
+                          />
+                        </figure>
+                        <div className="text">
+                          <h6 className="color_blue">
+                            {project?.attributes?.name}
+                          </h6>
+                          <p>{project?.attributes?.location}</p>
                         </div>
-                      </div>
+                      </a>
                     </div>
-                  )
-                )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

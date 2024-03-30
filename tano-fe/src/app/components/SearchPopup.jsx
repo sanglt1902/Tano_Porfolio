@@ -8,7 +8,7 @@ function SearchPopup() {
         <div className="popup-inner">
           <div className="upper-box clearfix">
             <figure className="logo-box pull-left">
-              <a href="index.html">
+              <a href="/">
                 <img src="/assets/images/logo.png" alt="" />
               </a>
             </figure>
@@ -19,7 +19,7 @@ function SearchPopup() {
           <div className="overlay-layer" />
           <div className="auto-container">
             <div className="search-form">
-              <form method="post" action="index.html">
+              <form method="post" action="/">
                 <div className="form-group">
                   <fieldset>
                     <input

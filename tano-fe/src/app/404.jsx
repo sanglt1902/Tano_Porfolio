@@ -27,21 +27,6 @@ function NotFound() {
                 Thi page you are looking for was moved, removed, renamed or
                 never existed
               </h4>
-              {/* <div className="form-inner">
-                <form action="error.html" method="post">
-                  <div className="form-group">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email Address"
-                      required=""
-                    />
-                    <button type="submit">
-                      <i className="icon-1" />
-                    </button>
-                  </div>
-                </form>
-              </div> */}
             </div>
           </div>
         </section>

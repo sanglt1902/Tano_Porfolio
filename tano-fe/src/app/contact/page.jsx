@@ -44,11 +44,6 @@ export default async function Contact() {
           <div className="large-container">
             <div className="col-lg-12 col-md-12 col-sm-12 mb-4 content-column">
               <div className="content-box">
-                <figure className="logo">
-                  <a href="#">
-                    <img src="assets/images/logo.png" alt="" />
-                  </a>
-                </figure>
                 <div className="text">
                   <p>
                     Tano Studio welcomes inquiries and collaboration
@@ -72,13 +67,13 @@ export default async function Contact() {
                   </li>
                   <li>
                     <i className="icon-18" />
-                    <a href="mailto:tano-studio@gmail.com">
-                      tano-studio@gmail.com
+                    <a href="mailto:tanostudio0@gmail.com">
+                      tanostudio0@gmail.com
                     </a>
                   </li>
                   <li>
                     <i className="far fa-map-marker-alt" />
-                    123 Main Street, Luton Town, USA
+                    314 Ngo Quyen street, Ward 10, Ho Chi Minh city, Viet Nam
                   </li>
                 </ul>
               </div>
@@ -87,13 +82,13 @@ export default async function Contact() {
             <section className="google-map-section col-lg-12 col-md-12 col-sm-12">
               <div className="map-inner">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.8461894952356!2d-74.36187212491225!3d40.52289064917267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3c82d29c39ead%3A0x2dd9cbf8366d1316!2s123%20Main%20St%2C%20Edison%2C%20NJ%2008817%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1708435058145!5m2!1svi!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.591362417146!2d106.66245909986297!3d10.765943219333511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee89ca72e59%3A0x64df895480e4bc85!2zMzE0IMSQLiBOZ8O0IFF1eeG7gW4sIFBoxrDhu51uZyA4LCBRdeG6rW4gMTAsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1711772116017!5m2!1svi!2s"
                   width="100%"
                   height="450"
                   style={{ border: 0 }}
-                  allowfullscreen=""
+                  allowFullScreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
             </section>
