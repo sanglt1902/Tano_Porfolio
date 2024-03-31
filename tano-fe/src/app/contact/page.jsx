@@ -63,11 +63,13 @@ export default async function Contact() {
                 <ul className="info-list clearfix">
                   <li>
                     <i className="icon-17" />
-                    <a href="tel:0394438632">039 443 8632</a>
+                    <a href="tel:0394438632" target="_blank">
+                      039 443 8632
+                    </a>
                   </li>
                   <li>
                     <i className="icon-18" />
-                    <a href="mailto:tanostudio0@gmail.com">
+                    <a href="mailto:tanostudio0@gmail.com" target="_blank">
                       tanostudio0@gmail.com
                     </a>
                   </li>

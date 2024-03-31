@@ -44,10 +44,7 @@ export default async function Team() {
             <div className="tabs-box">
               <div className="tab-btn-box centred">
                 <ul className="tab-btns tab-buttons clearfix">
-                  <li
-                    className="tab-btn active-btn"
-                    data-tab="#Designer"
-                  >
+                  <li className="tab-btn active-btn" data-tab="#Designer">
                     Designer
                   </li>
                   <li className="tab-btn" data-tab="#3D-Artist">
@@ -81,12 +78,18 @@ export default async function Team() {
                                 </figure>
                                 <ul className="social-links clearfix">
                                   <li>
-                                    <a href={`${person?.attributes?.facebook}`}>
+                                    <a
+                                      href={`${person?.attributes?.facebook}`}
+                                      target="_blank"
+                                    >
                                       <i className="icon-3" />
                                     </a>
                                   </li>
                                   <li>
-                                    <a href={`${person?.attributes?.instagram}`}>
+                                    <a
+                                      href={`${person?.attributes?.instagram}`}
+                                      target="_blank"
+                                    >
                                       <i className="icon-4" />
                                     </a>
                                   </li>
@@ -95,7 +98,9 @@ export default async function Team() {
                               <div className="content-box">
                                 <span className="count-text">0{index + 1}</span>
                                 <h4>
-                                  <a href={`/team/${person?.id}`}>{person?.attributes?.name}</a>
+                                  <a href={`/team/${person?.id}`}>
+                                    {person?.attributes?.name}
+                                  </a>
                                 </h4>
                                 <span className="designation">
                                   {person?.attributes?.level}
@@ -129,12 +134,18 @@ export default async function Team() {
                                 </figure>
                                 <ul className="social-links clearfix">
                                   <li>
-                                    <a href={`${person?.attributes?.facebook}`}>
+                                    <a
+                                      href={`${person?.attributes?.facebook}`}
+                                      target="_blank"
+                                    >
                                       <i className="icon-3" />
                                     </a>
                                   </li>
                                   <li>
-                                    <a href={`${person?.attributes?.instagram}`}>
+                                    <a
+                                      href={`${person?.attributes?.instagram}`}
+                                      target="_blank"
+                                    >
                                       <i className="icon-4" />
                                     </a>
                                   </li>
@@ -143,7 +154,9 @@ export default async function Team() {
                               <div className="content-box">
                                 <span className="count-text">0{index + 1}</span>
                                 <h4>
-                                  <a href={`/team/${person?.id}`}>{person?.attributes?.name}</a>
+                                  <a href={`/team/${person?.id}`}>
+                                    {person?.attributes?.name}
+                                  </a>
                                 </h4>
                                 <span className="designation">
                                   {person?.attributes?.level}
@@ -155,54 +168,6 @@ export default async function Team() {
                       ))}
                   </div>
                 </div>
-                {/* <div className="tab" id="graphics-design">
-                  <div className="row clearfix">
-                    {ourTeamInfo?.ourTeamDetails?.data
-                      ?.filter((person) =>
-                        person?.attributes?.role.includes("graphics-design")
-                      )
-                      .map((person, index) => (
-                        <div
-                          className="col-lg-4 col-md-6 col-sm-12 team-block"
-                          key={person?.id}
-                        >
-                          <div className="team-block-one">
-                            <div className="inner-box">
-                              <div className="image-box">
-                                <figure className="image">
-                                  <img
-                                    src={`${BASE_URL}${person?.attributes?.teamPageImage?.data?.attributes?.url}`}
-                                    alt=""
-                                  />
-                                </figure>
-                                <ul className="social-links clearfix">
-                                  <li>
-                                    <a href={`${person?.attributes?.facebook}`}>
-                                      <i className="icon-3" />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href={`${person?.attributes?.instagram}`}>
-                                      <i className="icon-4" />
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div className="content-box">
-                                <span className="count-text">0{index + 1}</span>
-                                <h4>
-                                  <a href={`/team/${person?.id}`}>{person?.attributes?.name}</a>
-                                </h4>
-                                <span className="designation">
-                                  {person?.attributes?.level}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>

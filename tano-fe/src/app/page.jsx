@@ -113,12 +113,12 @@ export default async function Home() {
               ></a>
             </li>
             <li className="twitter">
-              <a href="#">
+              <a href="#" target="_blank">
                 <i className="icon-5" />
               </a>
             </li>
             <li className="linkedin">
-              <a href="#" className="fab fa-linkedin-in" />
+              <a href="#" className="fab fa-linkedin-in" target="_blank" />
             </li>
           </ul>
         </section>
@@ -341,6 +341,7 @@ export default async function Home() {
                         href={video?.videoUrl}
                         className="lightbox-image"
                         data-caption=""
+                        target="_blank"
                       >
                         <i className="icon-13" />
                       </a>

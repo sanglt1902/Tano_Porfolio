@@ -169,10 +169,14 @@ function MainHeader() {
             <ul>
               <li>314 Ngo Quyen street, Ward 10, Ho Chi Minh city, Viet Nam</li>
               <li>
-                <a href="tel:0394438632">039 443 8632</a>
+                <a href="tel:0394438632" target="_blank">
+                  039 443 8632
+                </a>
               </li>
               <li>
-                <a href="mailto:tanostudio0@gmail.com">tanostudio0@gmail.com</a>
+                <a href="mailto:tanostudio0@gmail.com" target="_blank">
+                  tanostudio0@gmail.com
+                </a>
               </li>
             </ul>
           </div>
@@ -194,12 +198,12 @@ function MainHeader() {
                 ></a>
               </li>
               <li className="twitter">
-                <a href="#">
+                <a href="#" target="_blank">
                   <i className="icon-5" />
                 </a>
               </li>
               <li className="linkedin">
-                <a href="#" className="fab fa-linkedin-in" />
+                <a href="#" className="fab fa-linkedin-in" target="_blank" />
               </li>
             </ul>
           </div>

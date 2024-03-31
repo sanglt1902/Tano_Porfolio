@@ -31,8 +31,7 @@ export default async function TeamMemberDetail({ params: { id } }) {
             <div
               className="bg-layer"
               style={{
-                backgroundImage:
-                `url(${BASE_URL}${teamMemberDetail?.ourTeamDetail?.data?.attributes?.detailHeroBanner?.data?.attributes?.url})`,
+                backgroundImage: `url(${BASE_URL}${teamMemberDetail?.ourTeamDetail?.data?.attributes?.detailHeroBanner?.data?.attributes?.url})`,
               }}
             />
             <div className="large-container">
@@ -49,56 +48,99 @@ export default async function TeamMemberDetail({ params: { id } }) {
             <div className="inner-box">
               <div className="image-box">
                 <figure className="image">
-                  <img src={`${BASE_URL}${teamMemberDetail?.ourTeamDetail?.data?.attributes?.detailRepresentImage?.data?.attributes?.url}`} alt="" />
+                  <img
+                    src={`${BASE_URL}${teamMemberDetail?.ourTeamDetail?.data?.attributes?.detailRepresentImage?.data?.attributes?.url}`}
+                    alt=""
+                  />
                 </figure>
                 <ul className="social-links clearfix">
                   <li>
-                    <a href={`${teamMemberDetail?.ourTeamDetail?.data?.attributes?.facebook}`}>
+                    <a
+                      href={`${teamMemberDetail?.ourTeamDetail?.data?.attributes?.facebook}`}
+                      target="_blank"
+                    >
                       <i className="icon-3" />
                     </a>
                   </li>
                   <li>
-                    <a href={`${teamMemberDetail?.ourTeamDetail?.data?.attributes?.instagram}`}>
+                    <a
+                      href={`${teamMemberDetail?.ourTeamDetail?.data?.attributes?.instagram}`}
+                      target="_blank"
+                    >
                       <i className="icon-4" />
                     </a>
                   </li>
                 </ul>
               </div>
               <div className="content-box">
-                <h2>{teamMemberDetail?.ourTeamDetail?.data?.attributes?.name}</h2>
-                <span className="designation">{teamMemberDetail?.ourTeamDetail?.data?.attributes?.level}</span>
+                <h2>
+                  {teamMemberDetail?.ourTeamDetail?.data?.attributes?.name}
+                </h2>
+                <span className="designation">
+                  {teamMemberDetail?.ourTeamDetail?.data?.attributes?.level}
+                </span>
                 <ul className="social-links clearfix">
                   <li>
-                    <a href={`${teamMemberDetail?.ourTeamDetail?.data?.attributes?.facebook}`}>
+                    <a
+                      href={`${teamMemberDetail?.ourTeamDetail?.data?.attributes?.facebook}`}
+                      target="_blank"
+                    >
                       <i className="icon-3" />
                     </a>
                   </li>
                   <li>
-                    <a href={`${teamMemberDetail?.ourTeamDetail?.data?.attributes?.instagram}`}>
+                    <a
+                      href={`${teamMemberDetail?.ourTeamDetail?.data?.attributes?.instagram}`}
+                      target="_blank"
+                    >
                       <i className="icon-4" />
                     </a>
                   </li>
                 </ul>
                 <p>
-                  {teamMemberDetail?.ourTeamDetail?.data?.attributes?.detailDescription}
+                  {
+                    teamMemberDetail?.ourTeamDetail?.data?.attributes
+                      ?.detailDescription
+                  }
                 </p>
                 <ul className="info-list clearfix">
                   <li>
-                    <span>Age :</span> {teamMemberDetail?.ourTeamDetail?.data?.attributes?.age} Years
+                    <span>Age :</span>{" "}
+                    {teamMemberDetail?.ourTeamDetail?.data?.attributes?.age}{" "}
+                    Years
                   </li>
                   <li>
                     <span>Contact Me :</span>{" "}
-                    <a href={`tel:${teamMemberDetail?.ourTeamDetail?.data?.attributes?.mobilePhoneNumber}`}>{teamMemberDetail?.ourTeamDetail?.data?.attributes?.mobilePhoneNumber}</a>
+                    <a
+                      href={`tel:${teamMemberDetail?.ourTeamDetail?.data?.attributes?.mobilePhoneNumber}`}
+                      target="_blank"
+                    >
+                      {
+                        teamMemberDetail?.ourTeamDetail?.data?.attributes
+                          ?.mobilePhoneNumber
+                      }
+                    </a>
                   </li>
                   <li>
-                    <span>Experience :</span> {teamMemberDetail?.ourTeamDetail?.data?.attributes?.experience} Years
+                    <span>Experience :</span>{" "}
+                    {
+                      teamMemberDetail?.ourTeamDetail?.data?.attributes
+                        ?.experience
+                    }{" "}
+                    Years
                   </li>
                   <li>
                     <span>Email :</span>{" "}
-                    <a href={`mailto:${teamMemberDetail?.ourTeamDetail?.data?.attributes?.email}`}>{teamMemberDetail?.ourTeamDetail?.data?.attributes?.email}</a>
+                    <a
+                      href={`mailto:${teamMemberDetail?.ourTeamDetail?.data?.attributes?.email}`}
+                      target="_blank"
+                    >
+                      {teamMemberDetail?.ourTeamDetail?.data?.attributes?.email}
+                    </a>
                   </li>
                   <li>
-                    <span>Skills :</span> {teamMemberDetail?.ourTeamDetail?.data?.attributes?.skills}
+                    <span>Skills :</span>{" "}
+                    {teamMemberDetail?.ourTeamDetail?.data?.attributes?.skills}
                   </li>
                 </ul>
               </div>
@@ -131,12 +173,18 @@ export default async function TeamMemberDetail({ params: { id } }) {
                         </figure>
                         <ul className="social-links clearfix">
                           <li>
-                            <a href={`${person?.attributes?.facebook}`}>
+                            <a
+                              href={`${person?.attributes?.facebook}`}
+                              target="_blank"
+                            >
                               <i className="icon-3" />
                             </a>
                           </li>
                           <li>
-                            <a href={`${person?.attributes?.instagram}`}>
+                            <a
+                              href={`${person?.attributes?.instagram}`}
+                              target="_blank"
+                            >
                               <i className="icon-4" />
                             </a>
                           </li>

@@ -270,12 +270,18 @@ export default async function About() {
                     </figure>
                     <ul className="social-links clearfix">
                       <li>
-                        <a href={`${person?.attributes?.facebook}`}>
+                        <a
+                          href={`${person?.attributes?.facebook}`}
+                          target="_blank"
+                        >
                           <i className="icon-3" />
                         </a>
                       </li>
                       <li>
-                        <a href={`${person?.attributes?.instagram}`}>
+                        <a
+                          href={`${person?.attributes?.instagram}`}
+                          target="_blank"
+                        >
                           <i className="icon-4" />
                         </a>
                       </li>

@@ -41,10 +41,12 @@ function SidebarCartItem() {
                         Nam
                       </li>
                       <li>
-                        <a href="tel:0394438632">039 443 8632</a>
+                        <a href="tel:0394438632" target="_blank">
+                          039 443 8632
+                        </a>
                       </li>
                       <li>
-                        <a href="tanostudio0@gmail.com">
+                        <a href="tanostudio0@gmail.com" target="_blank">
                           tanostudio0@gmail.com
                         </a>
                       </li>
@@ -67,12 +69,16 @@ function SidebarCartItem() {
                       ></a>
                     </li>
                     <li className="twitter">
-                      <a href="#">
+                      <a href="#" target="_blank">
                         <i className="icon-5" />
                       </a>
                     </li>
                     <li className="linkedin">
-                      <a href="#" className="fab fa-linkedin-in" />
+                      <a
+                        href="#"
+                        className="fab fa-linkedin-in"
+                        target="_blank"
+                      />
                     </li>
                   </ul>
                 </div>
