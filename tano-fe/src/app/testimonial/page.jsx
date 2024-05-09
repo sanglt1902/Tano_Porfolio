@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 import MainHeader from "../components/MainHeader";
 import ScrollToTop from "../components/ScrollToTop";
-import SearchPopup from "../components/SearchPopup";
 import SidebarCartItem from "../components/SidebarCartItem";
 
 function Testimonial() {
@@ -11,7 +10,6 @@ function Testimonial() {
     <>
       <div className="boxed_wrapper">
         <Loader />
-        <SearchPopup />
         <SidebarCartItem />
         <MainHeader />
         {/* page-title */}

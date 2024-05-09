@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import MainHeader from "./components/MainHeader";
 import ScrollToTop from "./components/ScrollToTop";
-import SearchPopup from "./components/SearchPopup";
 import SidebarCartItem from "./components/SidebarCartItem";
 
 import {
@@ -26,7 +25,6 @@ export default async function Home() {
     <>
       <div className="boxed_wrapper">
         <Loader />
-        <SearchPopup />
         <SidebarCartItem />
         <MainHeader />
         {/* banner-section */}

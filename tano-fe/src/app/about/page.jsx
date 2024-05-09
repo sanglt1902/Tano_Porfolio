@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 import MainHeader from "../components/MainHeader";
 import ScrollToTop from "../components/ScrollToTop";
-import SearchPopup from "../components/SearchPopup";
 import SidebarCartItem from "../components/SidebarCartItem";
 
 import {
@@ -26,7 +25,6 @@ export default async function About() {
   return (
     <div className="boxed_wrapper">
       <Loader />
-      <SearchPopup />
       <SidebarCartItem />
       <MainHeader />
       {/* page-title */}
@@ -76,9 +74,7 @@ export default async function About() {
                       backgroundImage: "url(assets/images/shape/shape-5.png)",
                     }}
                   />
-                  <span className="curved-circle">
-                    Welcome To Our Inventarc
-                  </span>
+                  <span className="curved-circle">Welcome To Tano Studio</span>
                   <div className="text">
                     <div className="inner">
                       <h2>

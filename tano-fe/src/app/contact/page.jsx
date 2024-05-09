@@ -1,7 +1,6 @@
 import Loader from "../components/Loader";
 import MainHeader from "../components/MainHeader";
 import ScrollToTop from "../components/ScrollToTop";
-import SearchPopup from "../components/SearchPopup";
 import SidebarCartItem from "../components/SidebarCartItem";
 
 import { GET_CONTACT_HERO_BANNER } from "@/graphql/query";
@@ -15,7 +14,6 @@ export default async function Contact() {
     <>
       <div className="boxed_wrapper">
         <Loader />
-        <SearchPopup />
         <SidebarCartItem />
         <MainHeader />
         {/* page-title */}

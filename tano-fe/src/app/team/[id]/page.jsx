@@ -3,7 +3,6 @@ import Footer from "../../components/Footer";
 import Loader from "../../components/Loader";
 import MainHeader from "../../components/MainHeader";
 import ScrollToTop from "../../components/ScrollToTop";
-import SearchPopup from "../../components/SearchPopup";
 import SidebarCartItem from "../../components/SidebarCartItem";
 
 import { GET_OUR_TEAM, GET_TEAM_MEMBER_DETAIL } from "@/graphql/query";
@@ -22,7 +21,6 @@ export default async function TeamMemberDetail({ params: { id } }) {
     <>
       <div className="boxed_wrapper">
         <Loader />
-        <SearchPopup />
         <SidebarCartItem />
         <MainHeader />
         {/* page-title */}
