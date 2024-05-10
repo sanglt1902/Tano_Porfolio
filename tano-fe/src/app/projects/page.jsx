@@ -132,6 +132,12 @@ const loadProjectHeroBanner = async () => {
     variables: {
       publicationState: "LIVE",
     },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
+    },
   });
 
   return data;
@@ -142,6 +148,12 @@ const loadProjectsList = async () => {
     query: GET_PROJECTS_LIST,
     variables: {
       publicationState: "LIVE",
+    },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
     },
   });
 

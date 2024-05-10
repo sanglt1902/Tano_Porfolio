@@ -120,6 +120,12 @@ const loadProjectDetail = async (id) => {
     variables: {
       id: id,
     },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
+    },
   });
 
   return data;

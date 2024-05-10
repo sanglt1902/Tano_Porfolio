@@ -184,6 +184,12 @@ const loadHeroBanner = async () => {
     variables: {
       publicationState: "LIVE",
     },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
+    },
   });
 
   return data;
@@ -194,6 +200,12 @@ const loadOurTeam = async () => {
     query: GET_OUR_TEAM,
     variables: {
       publicationState: "LIVE",
+    },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
     },
   });
 

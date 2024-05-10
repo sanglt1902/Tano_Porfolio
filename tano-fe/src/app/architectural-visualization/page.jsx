@@ -142,6 +142,12 @@ const loadRepresentImages = async () => {
     variables: {
       publicationState: "LIVE",
     },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
+    },
   });
 
   return data;

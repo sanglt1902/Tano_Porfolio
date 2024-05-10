@@ -236,8 +236,8 @@ export default async function About() {
         <div className="auto-container">
           <div className="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
             {clientSection?.aboutClientSection?.data?.attributes?.aboutClientSection?.data.map(
-              (client) => (
-                <figure className="clients-logo" key={client?.id}>
+              (client, index) => (
+                <figure className="clients-logo" key={index}>
                   <img src={`${BASE_URL}${client?.attributes?.url}`} alt="" />
                 </figure>
               )
@@ -313,6 +313,12 @@ const loadHeroBanner = async () => {
     variables: {
       publicationState: "LIVE",
     },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
+    },
   });
 
   return data;
@@ -323,6 +329,12 @@ const loadGetToKnowInfo = async () => {
     query: GET_ABOUT_GET_TO_KNOW,
     variables: {
       publicationState: "LIVE",
+    },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
     },
   });
 
@@ -335,6 +347,12 @@ const loadTestimonials = async () => {
     variables: {
       id: 1,
     },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
+    },
   });
 
   return data;
@@ -346,6 +364,12 @@ const loadClientSection = async () => {
     variables: {
       publicationState: "LIVE",
     },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
+    },
   });
 
   return data;
@@ -356,6 +380,12 @@ const loadOurTeam = async () => {
     query: GET_OUR_TEAM,
     variables: {
       publicationState: "LIVE",
+    },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+      cache: "no-store",
     },
   });
 
