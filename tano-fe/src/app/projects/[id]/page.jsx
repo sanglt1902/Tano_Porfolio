@@ -42,23 +42,21 @@ export default async function ProjectDetail({ params: { id } }) {
         <section className="project-details">
           <div className="auto-container">
             <div className="inner-container">
-              <div className="project-block-two">
-                <div className="inner-box">
-                  <figure className="image-box">
-                    <img
-                      src={`${BASE_URL}${projectDetail?.projectDetail?.data?.attributes?.detailPageImage?.data?.attributes?.url}`}
-                      alt=""
-                    />
-                  </figure>
-                  <div className="text">
-                    <h6>
-                      {projectDetail?.projectDetail?.data?.attributes?.name}
-                    </h6>
-                    <p>
-                      {projectDetail?.projectDetail?.data?.attributes?.location}
-                    </p>
-                  </div>
-                </div>
+              <div className="single-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+                {projectDetail?.projectDetail?.data?.attributes?.detailPageImage?.data.map(
+                  (project, index) => (
+                    <div className="project-block-two" key={index}>
+                      <div className="inner-box">
+                        <figure className="image-box">
+                          <img
+                            src={`${BASE_URL}${project?.attributes?.url}`}
+                            alt=""
+                          />
+                        </figure>
+                      </div>
+                    </div>
+                  )
+                )}
               </div>
               <div className="content-one">
                 <div className="sec-title">
