@@ -66,7 +66,10 @@ export default async function Team() {
                           key={person?.id}
                         >
                           <div className="team-block-one">
-                            <div className="inner-box">
+                            <a
+                              className="inner-box"
+                              href={`/team/${person?.id}`}
+                            >
                               <div className="image-box">
                                 <figure className="image">
                                   <img
@@ -74,37 +77,15 @@ export default async function Team() {
                                     alt=""
                                   />
                                 </figure>
-                                <ul className="social-links clearfix">
-                                  <li>
-                                    <a
-                                      href={`${person?.attributes?.facebook}`}
-                                      target="_blank"
-                                    >
-                                      <i className="icon-3" />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href={`${person?.attributes?.instagram}`}
-                                      target="_blank"
-                                    >
-                                      <i className="icon-4" />
-                                    </a>
-                                  </li>
-                                </ul>
                               </div>
                               <div className="content-box">
                                 <span className="count-text">0{index + 1}</span>
-                                <h4>
-                                  <a href={`/team/${person?.id}`}>
-                                    {person?.attributes?.name}
-                                  </a>
-                                </h4>
+                                <h4>{person?.attributes?.name}</h4>
                                 <span className="designation">
                                   {person?.attributes?.level}
                                 </span>
                               </div>
-                            </div>
+                            </a>
                           </div>
                         </div>
                       ))}
@@ -122,7 +103,10 @@ export default async function Team() {
                           key={person?.id}
                         >
                           <div className="team-block-one">
-                            <div className="inner-box">
+                            <a
+                              className="inner-box"
+                              href={`/team/${person?.id}`}
+                            >
                               <div className="image-box">
                                 <figure className="image">
                                   <img
@@ -130,37 +114,15 @@ export default async function Team() {
                                     alt=""
                                   />
                                 </figure>
-                                <ul className="social-links clearfix">
-                                  <li>
-                                    <a
-                                      href={`${person?.attributes?.facebook}`}
-                                      target="_blank"
-                                    >
-                                      <i className="icon-3" />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href={`${person?.attributes?.instagram}`}
-                                      target="_blank"
-                                    >
-                                      <i className="icon-4" />
-                                    </a>
-                                  </li>
-                                </ul>
                               </div>
                               <div className="content-box">
                                 <span className="count-text">0{index + 1}</span>
-                                <h4>
-                                  <a href={`/team/${person?.id}`}>
-                                    {person?.attributes?.name}
-                                  </a>
-                                </h4>
+                                <h4>{person?.attributes?.name}</h4>
                                 <span className="designation">
                                   {person?.attributes?.level}
                                 </span>
                               </div>
-                            </div>
+                            </a>
                           </div>
                         </div>
                       ))}
