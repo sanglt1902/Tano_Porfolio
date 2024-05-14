@@ -125,13 +125,13 @@ async function Footer() {
               </div>
             </div>
           </div>
-          {/* <div className="footer-bottom centred">
+          <div className="footer-bottom centred">
             <div className="copyright">
               <h4>
-                Copyright By © <a href="/">Inventarc</a> - 2024
+                Copyright By © <a href="/">Tano Studio</a> - 2024
               </h4>
             </div>
-          </div> */}
+          </div>
         </div>
       </footer>
       {/* main-footer end */}
