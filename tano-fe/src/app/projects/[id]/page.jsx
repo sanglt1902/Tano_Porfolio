@@ -15,6 +15,11 @@ export default async function ProjectDetail({ params: { id } }) {
   const strapiMarkdownContent =
     projectDetail?.projectDetail?.data?.attributes?.description;
 
+  const category =
+    projectDetail?.projectDetail?.data?.attributes?.category.split("-");
+  const firstCharCategory = category[0];
+  const secondCharCategory = category[1];
+
   return (
     <>
       <div className="boxed_wrapper">
@@ -61,7 +66,8 @@ export default async function ProjectDetail({ params: { id } }) {
               <div className="content-one">
                 <div className="sec-title">
                   <h2>
-                    Interior <span>Design</span>
+                    {firstCharCategory}
+                    <span> {secondCharCategory}</span>
                   </h2>
                 </div>
                 <div className="text">

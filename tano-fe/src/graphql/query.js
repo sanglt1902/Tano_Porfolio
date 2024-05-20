@@ -207,7 +207,9 @@ export const GET_HOME_VIDEOS = gql`
 `;
 
 export const GET_ARCHITECTURAL_VISUALIZATION_SERVICE = gql`
-  query GetArchitecturalVisualizationServiceService($publicationState: PublicationState) {
+  query GetArchitecturalVisualizationServiceService(
+    $publicationState: PublicationState
+  ) {
     architecturalVisualizationService(publicationState: $publicationState) {
       data {
         attributes {
@@ -288,9 +290,9 @@ export const GET_INTERIOR_DESIGN_SERVICE = gql`
   }
 `;
 
-export const GET_CHARACTER_MODELING_SERVICE = gql`
-  query GetCharacterModelingService($publicationState: PublicationState) {
-    characterModelingService(publicationState: $publicationState) {
+export const GET_FLOORPLANS_SERVICE = gql`
+  query GetFloorplansService($publicationState: PublicationState) {
+    floorplansService(publicationState: $publicationState) {
       data {
         attributes {
           serviceImages {
@@ -423,8 +425,7 @@ export const GET_PROJECT_DETAIL = gql`
       data {
         id
         attributes {
-          name
-          location
+          category
           description
           detailPageImage {
             data {

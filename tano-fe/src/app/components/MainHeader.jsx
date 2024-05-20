@@ -9,7 +9,7 @@ function MainHeader() {
     "/our-services",
     "/architectural-visualization",
     "/interior-visualization",
-    "/character-modeling",
+    "/floorplans",
     "/product-visualization",
   ];
 
@@ -75,7 +75,7 @@ function MainHeader() {
                           </a>
                         </li>
                         <li>
-                          <a href="/character-modeling">Character Modeling</a>
+                          <a href="/floorplans">Floorplans</a>
                         </li>
                         <li>
                           <a href="/product-visualization">

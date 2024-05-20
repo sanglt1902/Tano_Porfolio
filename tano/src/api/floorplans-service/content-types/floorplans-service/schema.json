@@ -1,10 +1,11 @@
 {
   "kind": "singleType",
-  "collectionName": "character_modeling_services",
+  "collectionName": "floorplans_services",
   "info": {
-    "singularName": "character-modeling-service",
-    "pluralName": "character-modeling-services",
-    "displayName": "characterModelingService"
+    "singularName": "floorplans-service",
+    "pluralName": "floorplans-services",
+    "displayName": "floorplansService",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

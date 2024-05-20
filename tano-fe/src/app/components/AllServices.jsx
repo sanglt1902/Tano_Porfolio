@@ -15,7 +15,9 @@ function AllServices() {
               <li>
                 <a
                   href="/architectural-visualization"
-                  className={pathname === "/architectural-visualization" ? "current" : ""}
+                  className={
+                    pathname === "/architectural-visualization" ? "current" : ""
+                  }
                 >
                   Architectural Visualization
                   <i className="icon-15" />
@@ -24,7 +26,9 @@ function AllServices() {
               <li>
                 <a
                   href="/interior-visualization"
-                  className={pathname === "/interior-visualization" ? "current" : ""}
+                  className={
+                    pathname === "/interior-visualization" ? "current" : ""
+                  }
                 >
                   Interior Visualization
                   <i className="icon-15" />
@@ -32,17 +36,19 @@ function AllServices() {
               </li>
               <li>
                 <a
-                  href="/character-modeling"
-                  className={pathname === "/character-modeling" ? "current" : ""}
+                  href="/floorplans"
+                  className={pathname === "/floorplans" ? "current" : ""}
                 >
-                  Character Modeling
+                  Floorplans
                   <i className="icon-15" />
                 </a>
               </li>
               <li>
                 <a
                   href="/product-visualization"
-                  className={pathname === "/product-visualization" ? "current" : ""}
+                  className={
+                    pathname === "/product-visualization" ? "current" : ""
+                  }
                 >
                   Product Visualization
                   <i className="icon-15" />

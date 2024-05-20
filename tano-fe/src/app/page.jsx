@@ -280,11 +280,11 @@ export default async function Home() {
                   data-wow-delay="400ms"
                   data-wow-duration="1500ms"
                 >
-                  <a href="/character-modeling" className="inner-box">
+                  <a href="/floorplans" className="inner-box">
                     <div className="icon-box">
                       <img src="assets/images/icons/icon-4.png" alt="" />
                     </div>
-                    <h4>Character Modeling</h4>
+                    <h4>Floorplans</h4>
                   </a>
                 </div>
               </div>

@@ -926,37 +926,6 @@ export interface ApiArchitecturalVisualizationServiceArchitecturalVisualizationS
   };
 }
 
-export interface ApiCharacterModelingServiceCharacterModelingService
-  extends Schema.SingleType {
-  collectionName: 'character_modeling_services';
-  info: {
-    singularName: 'character-modeling-service';
-    pluralName: 'character-modeling-services';
-    displayName: 'characterModelingService';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    serviceImages: Attribute.Component<'service-images.service-images'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::character-modeling-service.character-modeling-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::character-modeling-service.character-modeling-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiContactHeroBannerContactHeroBanner
   extends Schema.SingleType {
   collectionName: 'contact_hero_banners';
@@ -981,6 +950,38 @@ export interface ApiContactHeroBannerContactHeroBanner
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::contact-hero-banner.contact-hero-banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFloorplansServiceFloorplansService
+  extends Schema.SingleType {
+  collectionName: 'floorplans_services';
+  info: {
+    singularName: 'floorplans-service';
+    pluralName: 'floorplans-services';
+    displayName: 'floorplansService';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceImages: Attribute.Component<'service-images.service-images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::floorplans-service.floorplans-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::floorplans-service.floorplans-service',
       'oneToOne',
       'admin::user'
     > &
@@ -1351,8 +1352,8 @@ declare module '@strapi/types' {
       'api::about-hero-banner.about-hero-banner': ApiAboutHeroBannerAboutHeroBanner;
       'api::about-testimonial.about-testimonial': ApiAboutTestimonialAboutTestimonial;
       'api::architectural-visualization-service.architectural-visualization-service': ApiArchitecturalVisualizationServiceArchitecturalVisualizationService;
-      'api::character-modeling-service.character-modeling-service': ApiCharacterModelingServiceCharacterModelingService;
       'api::contact-hero-banner.contact-hero-banner': ApiContactHeroBannerContactHeroBanner;
+      'api::floorplans-service.floorplans-service': ApiFloorplansServiceFloorplansService;
       'api::footer-image.footer-image': ApiFooterImageFooterImage;
       'api::home-get-to-know.home-get-to-know': ApiHomeGetToKnowHomeGetToKnow;
       'api::home-hero-banner.home-hero-banner': ApiHomeHeroBannerHomeHeroBanner;

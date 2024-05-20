@@ -74,9 +74,9 @@ export default async function Projects() {
                   <li
                     className="filter"
                     data-role="button"
-                    data-filter=".Character-Modeling"
+                    data-filter=".Floorplans"
                   >
-                    Character Modeling
+                    Floorplans
                   </li>
                   <li
                     className="filter"
