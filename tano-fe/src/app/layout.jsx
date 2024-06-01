@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <Script src="/assets/js/scrollbar.js" />
       <Script src="/assets/js/nav-tool.js" />
       <Script src="/assets/js/plugins.js" />
-      <Script src="/assets/js/parallax-scroll.js" />
+      <Script src="/assets/js/parallax-scroll.js" strategy="lazyOnload" />
       <Script src="/assets/js/jquery.lettering.min.js" />
       <Script src="/assets/js/jquery.circleType.js" />
       <Script src="/assets/js/isotope.js" />

@@ -49,14 +49,14 @@ export default async function Floorplans() {
                     </div>
                     <p>
                       Floorplans are fundamental tools in architectural design,
-                      providing a bird’s-eye view of a building's layout. These
-                      plans showcase the arrangement of rooms, spaces, and
+                      providing a bird’s-eye view of a building&apos;s layout.
+                      These plans showcase the arrangement of rooms, spaces, and
                       physical features at one level of a structure, helping to
                       visualize the spatial relationships and flow within the
                       building. Designers and architects use floorplans to
                       communicate the intended design, ensuring that all
                       stakeholders, from clients to builders, have a clear
-                      understanding of the project's blueprint.
+                      understanding of the project&apos;s blueprint.
                     </p>
                     <p>
                       The importance of floorplans extends beyond mere
@@ -81,7 +81,7 @@ export default async function Floorplans() {
                       understand the proposed spaces. Additionally, these tools
                       support collaboration among various stakeholders,
                       enhancing communication and ensuring that the final design
-                      aligns with the client's vision and requirements.
+                      aligns with the client&apos;s vision and requirements.
                     </p>
                   </div>
                   <div className="image-box">
