@@ -45,7 +45,7 @@ export default async function ProjectDetail({ params: { id } }) {
         {/* page-title end */}
         {/* project-details */}
         <section className="project-details">
-          <div className="auto-container">
+          <div className="outer-container">
             <div className="inner-container">
               <div className="single-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
                 {projectDetail?.projectDetail?.data?.attributes?.detailPageImage?.data.map(

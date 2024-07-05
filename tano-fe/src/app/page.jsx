@@ -370,7 +370,7 @@ export default async function Home() {
               <div className="five-item-carousel owl-carousel owl-theme owl-dots-none">
                 {projectsList?.projectDetails?.data.map((project, index) => (
                   <div className="project-block-one" key={project?.id}>
-                    <div className="inner-box">
+                    <a className="inner-box" href={`/projects/${project?.id}`}>
                       <figure className="image-box">
                         <img
                           src={`${BASE_URL}${project?.attributes?.homeImage?.data?.attributes?.url}`}
@@ -379,11 +379,7 @@ export default async function Home() {
                       </figure>
                       <div className="content-box">
                         <div className="text">
-                          <h2>
-                            <a href={`/projects/${project?.id}`}>
-                              {project?.attributes?.name}
-                            </a>
-                          </h2>
+                          <h2>{project?.attributes?.name}</h2>
                           <p>
                             <i className="far fa-map-marker-alt" />
                             {project?.attributes?.location}
@@ -391,12 +387,10 @@ export default async function Home() {
                           <span className="big-text">0{index + 1}</span>
                         </div>
                         <div className="link">
-                          <a href={`/projects/${project?.id}`}>
-                            <i className="icon-7" />
-                          </a>
+                          <i className="icon-7" />
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 ))}
               </div>

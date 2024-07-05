@@ -2699,7 +2699,7 @@ body.out .mouse-pointer {
   bottom: -71px;
 }
 
-.project-block-one .inner-box .content-box .link a {
+.project-block-one .inner-box .content-box .link {
   font-size: 30px;
   color: #fff;
 }
@@ -5205,9 +5205,16 @@ body.out .mouse-pointer {
   padding: 120px 0px;
 }
 
+.project-details .outer-container {
+  position: static;
+  max-width: 2010px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
 .project-details .inner-container {
   position: relative;
-  max-width: 1010px;
+  max-width: 1980px;
   width: 100%;
   margin: 0 auto;
 }
@@ -5219,6 +5226,7 @@ body.out .mouse-pointer {
 
 .project-details .project-block-two .inner-box img {
   border-radius: 20px;
+  max-height: 1010px;
 }
 
 .project-details .project-block-two .inner-box .text {
