@@ -5260,6 +5260,12 @@ body.out .mouse-pointer {
   margin-bottom: 53px;
 }
 
+.project-details .max-width-1010 {
+  max-width: 1010px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-details .content-two .sec-title h2 {
   margin-bottom: 28px;
 }

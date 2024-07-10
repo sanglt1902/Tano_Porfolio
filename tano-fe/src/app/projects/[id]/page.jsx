@@ -63,7 +63,7 @@ export default async function ProjectDetail({ params: { id } }) {
                   )
                 )}
               </div>
-              <div className="content-one">
+              <div className="content-one max-width-1010">
                 <div className="sec-title">
                   <h2>
                     {firstCharCategory}
@@ -74,7 +74,7 @@ export default async function ProjectDetail({ params: { id } }) {
                   <MarkdownToHtml markdownContent={strapiMarkdownContent} />
                 </div>
               </div>
-              <div className="content-two">
+              <div className="content-two max-width-1010">
                 <div className="sec-title">
                   <h2>
                     Find out the <span>design solution</span>
