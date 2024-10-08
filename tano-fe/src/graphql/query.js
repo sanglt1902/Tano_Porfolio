@@ -391,8 +391,15 @@ export const GET_PROJECT_PAGE_HERO_BANNER = gql`
 `;
 
 export const GET_PROJECTS_LIST = gql`
-  query GetProjectDetails($publicationState: PublicationState) {
-    projectDetails(publicationState: $publicationState) {
+  query GetProjectDetails(
+    $publicationState: PublicationState
+    $start: Int
+    $limit: Int
+  ) {
+    projectDetails(
+      publicationState: $publicationState
+      pagination: { start: $start, limit: $limit }
+    ) {
       data {
         id
         attributes {
