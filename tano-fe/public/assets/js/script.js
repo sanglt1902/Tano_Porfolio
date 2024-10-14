@@ -636,16 +636,15 @@
 	
 			$container.isotope({
 				filter:'*',
-				 masonry: {
+					masonry: {
 					columnWidth : '.masonry-item.small-column'
-				 },
+					},
 				animationOptions:{
 					duration:500,
 					easing:'linear'
 				}
 			});
-			
-	
+
 			// Isotope Filter 
 			$filter.find('li').on('click', function(){
 				var selector = $(this).attr('data-filter');
@@ -757,7 +756,6 @@
 		(function ($) {
 			// add your functions
 			directionswitch();
-			enableMasonry();
 		})(jQuery);
 	});
 
@@ -790,6 +788,8 @@
 	$(document).ready(function() {
     handlePreloader();
 	});
+
+	$(window).load(function(){ enableMasonry(); });
 
 	
 
