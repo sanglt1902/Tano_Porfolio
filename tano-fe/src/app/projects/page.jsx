@@ -105,10 +105,12 @@ export default async function Projects() {
                           />
                         </figure>
                         <div className="text">
-                          <h6 className="color_blue">
+                          <h6 className="color_light">
                             {project?.attributes?.name}
                           </h6>
-                          <p>{project?.attributes?.location}</p>
+                          <span className="color_orange">
+                            {project?.attributes?.location}
+                          </span>
                         </div>
                       </a>
                     </div>
