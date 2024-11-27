@@ -151,7 +151,7 @@ const loadProjectsList = async () => {
     variables: {
       publicationState: "LIVE",
       start: 0, // Start from the first entry
-      limit: 100, // Set the limit to the number of entries you want to retrieve
+      limit: -1, // Set the limit to the number of entries you want to retrieve
     },
     context: {
       fetchOptions: {
