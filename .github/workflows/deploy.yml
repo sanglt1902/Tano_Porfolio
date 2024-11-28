@@ -27,17 +27,19 @@ jobs:
 
       - name: Build BE
         run: |
+          cd tano
           npm run build
 
       # Install dependencies for FE (React)
       - name: Install FE dependencies
         run: |
-          cd ../tano-fe  # assuming the frontend folder is named "frontend"
+          cd tano-fe  # assuming the frontend folder is named "frontend"
           npm install
 
       # Build React (Frontend)
       - name: Build FE
         run: |
+          cd tano-fe
           npm run build
 
       # Deploy Backend and Frontend to Server using ssh-deploy
