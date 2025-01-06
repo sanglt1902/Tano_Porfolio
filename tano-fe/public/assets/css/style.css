@@ -5214,7 +5214,7 @@ body.out .mouse-pointer {
 
 .project-details .inner-container {
   position: relative;
-  max-width: 1980px;
+  max-width: 1920px;
   width: 100%;
   margin: 0 auto;
 }
@@ -5226,7 +5226,6 @@ body.out .mouse-pointer {
 
 .project-details .project-block-two .inner-box img {
   border-radius: 20px;
-  max-height: 1010px;
 }
 
 .project-details .project-block-two .inner-box .text {
