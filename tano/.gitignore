@@ -1,7 +1,7 @@
 ############################
 # OS X
 ############################
-
+.data
 .DS_Store
 .AppleDouble
 .LSOverride
