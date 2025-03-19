@@ -5,7 +5,7 @@
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if($('.loader-wrap').length){
-			$('.loader-wrap').delay(1000).fadeOut(500);
+			$('.loader-wrap').delay(2000).fadeOut(500);
 		}
 	}
 
@@ -625,73 +625,7 @@
     }
 
 
-    //Sortable Masonary with Filters
-	function enableMasonry() {
-		if($('.sortable-masonry').length){
-	
-			var winDow = $(window);
-			// Needed variables
-			var $container=$('.sortable-masonry .items-container');
-			var $filter=$('.filter-btns');
-	
-			$container.isotope({
-				filter:'*',
-					masonry: {
-					columnWidth : '.masonry-item.small-column'
-					},
-				animationOptions:{
-					duration:500,
-					easing:'linear'
-				}
-			});
 
-			// Isotope Filter 
-			$filter.find('li').on('click', function(){
-				var selector = $(this).attr('data-filter');
-	
-				try {
-					$container.isotope({ 
-						filter	: selector,
-						animationOptions: {
-							duration: 500,
-							easing	: 'linear',
-							queue	: false
-						}
-					});
-				} catch(err) {
-	
-				}
-				return false;
-			});
-	
-	
-			winDow.on('resize', function(){
-				var selector = $filter.find('li.active').attr('data-filter');
-
-				$container.isotope({ 
-					filter	: selector,
-					animationOptions: {
-						duration: 500,
-						easing	: 'linear',
-						queue	: false
-					}
-				});
-			});
-	
-	
-			var filterItemA	= $('.filter-btns li');
-	
-			filterItemA.on('click', function(){
-				var $this = $(this);
-				if ( !$this.hasClass('active')) {
-					filterItemA.removeClass('active');
-					$this.addClass('active');
-				}
-			});
-		}
-	}
-	
-	enableMasonry();
 
 
 	if($('.timer').length){
@@ -780,17 +714,9 @@
 	/* ==========================================================================
    When document is loaded, do
    ========================================================================== */
-	
-	// $(window).on('load', function() {
-	// 	handlePreloader();
-	// });
 
 	$(document).ready(function() {
     handlePreloader();
 	});
-
-	$(window).load(function(){ enableMasonry(); });
-
-	
 
 })(window.jQuery);

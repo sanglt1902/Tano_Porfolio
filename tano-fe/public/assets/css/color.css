@@ -328,8 +328,8 @@
   background: #B19777;
 }
 
-.project-page-section .filters .filter-tabs li.active,
-.project-page-section .filters .filter-tabs li:hover {
+.project-page-section .tab-btn-box .tab-btns li.active-btn,
+.project-page-section .tab-btn-box .tab-btns li:hover {
   color: #B19777;
 }
 

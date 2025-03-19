@@ -18,6 +18,32 @@ export default async function Projects() {
 
   return (
     <>
+      <style>{`
+        .masonry-grid {
+          column-count: 3;
+        }
+
+        .masonry-item {
+          width: 100%;
+          break-inside: avoid;
+        }
+
+        .inner-box {
+          margin-bottom: 15px !important;
+        }
+
+        @media (max-width: 992px) {
+          .masonry-grid {
+            column-count: 2;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .masonry-grid {
+            column-count: 1;
+          }
+        }
+      `}</style>
       <div className="boxed_wrapper">
         <Loader />
         <SidebarCartItem />
@@ -47,72 +73,97 @@ export default async function Projects() {
                 Our Completed <span>Architecture Projects</span>
               </h2>
             </div>
-            <div className="sortable-masonry">
-              <div className="filters centred">
-                <ul className="filter-tabs filter-btns clearfix">
-                  <li
-                    className="active filter"
-                    data-role="button"
-                    data-filter=".all"
-                  >
+            <div className="tabs-box">
+              <div className="tab-btn-box centred">
+                <ul className="tab-btns tab-buttons clearfix">
+                  <li className="tab-btn active-btn" data-tab="#All">
                     All
                   </li>
                   <li
-                    className="filter"
-                    data-role="button"
-                    data-filter=".Architectural-Visualization"
+                    className="tab-btn"
+                    data-tab="#Architectural-Visualization"
                   >
                     Architectural Visualization
                   </li>
-                  <li
-                    className="filter"
-                    data-role="button"
-                    data-filter=".Interior-Visualization"
-                  >
+                  <li className="tab-btn" data-tab="#Interior-Visualization">
                     Interior Visualization
                   </li>
-                  <li
-                    className="filter"
-                    data-role="button"
-                    data-filter=".Floorplans"
-                  >
+                  <li className="tab-btn" data-tab="#Floorplans">
                     Floorplans
                   </li>
-                  <li
-                    className="filter"
-                    data-role="button"
-                    data-filter=".Product-Visualization"
-                  >
+                  <li className="tab-btn" data-tab="#Product-Visualization">
                     Product Visualization
                   </li>
                 </ul>
               </div>
-              <div className="items-container row clearfix">
-                {projectsList?.projectDetails?.data.map((project) => (
-                  <div
-                    className={`col-lg-4 col-md-6 col-sm-12 masonry-item small-column all ${project?.attributes?.category}`}
-                    key={project?.id}
-                  >
-                    <div className="project-block-two">
-                      <a
-                        className="inner-box"
-                        href={`/projects/${project?.id}`}
-                      >
-                        <figure className="image-box">
-                          <img
-                            src={`${BASE_URL}${project?.attributes?.projectsPageImage?.data?.attributes?.url}`}
-                            alt=""
-                          />
-                        </figure>
-                        <div className="text">
-                          <h6 className="color_light">
-                            {project?.attributes?.name}
-                          </h6>
-                          <span className="color_orange">
-                            {project?.attributes?.location}
-                          </span>
+              <div className="tabs-content">
+                <div className="tab active-tab" id="All">
+                  <div className="masonry-grid">
+                    {projectsList?.projectDetails?.data.map((project) => (
+                      <div className="masonry-item" key={project?.id}>
+                        <div className="project-block-two">
+                          <a
+                            className="inner-box"
+                            href={`/projects/${project?.id}`}
+                          >
+                            <figure className="image-box">
+                              <img
+                                src={`${BASE_URL}${project?.attributes?.projectsPageImage?.data?.attributes?.url}`}
+                                alt=""
+                              />
+                            </figure>
+                            <div className="text">
+                              <h6 className="color_light">
+                                {project?.attributes?.name}
+                              </h6>
+                              <span className="color_orange">
+                                {project?.attributes?.location}
+                              </span>
+                            </div>
+                          </a>
                         </div>
-                      </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {[
+                  "Architectural-Visualization",
+                  "Interior-Visualization",
+                  "Floorplans",
+                  "Product-Visualization",
+                ].map((category) => (
+                  <div className="tab" id={category} key={category}>
+                    <div className="masonry-grid">
+                      {projectsList?.projectDetails?.data
+                        .filter(
+                          (project) =>
+                            project?.attributes?.category === category
+                        )
+                        .map((project) => (
+                          <div className="masonry-item" key={project?.id}>
+                            <div className="project-block-two">
+                              <a
+                                className="inner-box"
+                                href={`/projects/${project?.id}`}
+                              >
+                                <figure className="image-box">
+                                  <img
+                                    src={`${BASE_URL}${project?.attributes?.projectsPageImage?.data?.attributes?.url}`}
+                                    alt=""
+                                  />
+                                </figure>
+                                <div className="text">
+                                  <h6 className="color_light">
+                                    {project?.attributes?.name}
+                                  </h6>
+                                  <span className="color_orange">
+                                    {project?.attributes?.location}
+                                  </span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        ))}
                     </div>
                   </div>
                 ))}
